@@ -1,1 +1,17 @@
-ln -s "$(pwd)/tmux.conf" $HOME/.tmux.conf
+link() {
+	dest="$HOME/$2"
+	if ! [ -e $dest ]
+	then
+		ln -s "$(pwd)/$1" $dest
+	fi
+}
+
+# Link the tmux config file
+link tmux.conf .tmux.conf
+
+# Link nvim files
+mkdir -p $HOME/.config/nvim/ftplugin
+for i in $(find vim -type f); do
+	link $i ".config/n$i"
+done
+
