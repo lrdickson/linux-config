@@ -10,7 +10,7 @@ link() {
 link tmux.conf .tmux.conf
 
 # Link nvim files
-mkdir -p $HOME/.config/nvim/ftplugin
+mkdir -p $HOME/.config/nvim/ftplugin $HOME/.config/nvim/autoload
 for i in $(find vim -type f); do
 	link $i ".config/n$i"
 done
