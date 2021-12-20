@@ -14,6 +14,9 @@ Plug 'ludovicchabant/vim-gutentags'
 " Initialize plugin system
 call plug#end()
 
+" Set the colorscheme
+colorscheme solarized8_high
+
 "====================== coc.vim =================================================
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
