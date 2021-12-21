@@ -17,3 +17,9 @@ done
 
 # Link .inputrc
 link inputrc .inputrc
+
+# link fish config
+mkdir -p $HOME/.config/fish
+for i in $(find fish -type f); do
+	link $i ".config/$i"
+done
