@@ -15,3 +15,5 @@ for i in $(find vim -type f); do
 	link $i ".config/n$i"
 done
 
+# Link .inputrc
+link inputrc .inputrc
