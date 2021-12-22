@@ -8,3 +8,6 @@ end
 
 # Fix terminal colors
 set -x TERM xterm-256color
+
+# Start FZF keybindings
+fzf_key_bindings
