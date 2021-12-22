@@ -5,6 +5,8 @@ call plug#begin('~/.config/vim-plug')
 Plug 'dense-analysis/ale'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'mcchrish/nnn.vim'
 Plug 'tpope/vim-fugitive'
