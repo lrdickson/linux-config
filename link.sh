@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 link() {
 	dest="$HOME/$2"
 	if ! [ -e $dest ]
