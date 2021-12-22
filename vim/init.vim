@@ -7,6 +7,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'mcchrish/nnn.vim'
 Plug 'tpope/vim-fugitive'
@@ -18,6 +19,22 @@ call plug#end()
 
 " Set the colorscheme
 colorscheme solarized8_high
+
+" Lightline config
+" Display git branch
+let g:lightline = {
+			\ 'active': {
+			\   'left': [ [ 'mode', 'paste' ],
+			\             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
+			\ },
+			\ 'component_function': {
+			\   'gitbranch': 'FugitiveHead'
+			\ },
+			\ }
+" Fix lightline colors when running sudo
+if !has('gui_running')
+  set t_Co=256
+endif
 
 "====================== coc.vim =================================================
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
