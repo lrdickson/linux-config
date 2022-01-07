@@ -6,4 +6,6 @@ augroup filetypedetect
 	au BufNewFile,BufRead *.xaml setf xml
 	" csv
 	au! BufNewFile,BufRead *.csv setf csv
+	" yaml
+	au BufNewFile,BufRead *.yaml,*.yml setf yaml
 augroup end
