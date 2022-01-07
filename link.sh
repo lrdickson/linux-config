@@ -8,20 +8,29 @@ link() {
 	fi
 }
 
-# Link the tmux config file
-link tmux.conf .tmux.conf
-
-# Link nvim files
-mkdir -p $HOME/.config/nvim/ftplugin $HOME/.config/nvim/autoload
-for i in $(find vim -type f); do
-	link $i ".config/n$i"
-done
-
-# Link .inputrc
-link inputrc .inputrc
-
-# link fish config
+# fish
 mkdir -p $HOME/.config/fish/conf.d/
 for i in $(find fish -type f); do
 	link $i ".config/$i"
+done
+
+# inputrc
+link inputrc .inputrc
+
+# ssh
+mkdir -p $HOME/.ssh/
+for i in $(find ssh -type f); do
+	link $i ".$i"
+done
+
+# tmux
+link tmux.conf .tmux.conf
+
+# vim
+mkdir -p $HOME/.config/vim/ftplugin $HOME/.config/vim/autoload
+mkdir -p $HOME/.config/nvim/ftplugin $HOME/.config/nvim/autoload
+link vim/init.vim .vimrc
+for i in $(find vim -type f); do
+	link $i ".config/$i"
+	link $i ".config/n$i"
 done
