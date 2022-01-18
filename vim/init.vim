@@ -241,3 +241,6 @@ endif
 
 " ==================================== Tagbar ==============================
 nnoremap <silent> <Leader>tb :TagbarToggle<CR>
+
+" =========================== Load .vimlocal if it exists ====================
+silent! so .vimlocal
