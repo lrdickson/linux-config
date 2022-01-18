@@ -239,6 +239,28 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+" =================================== ssh =================================
+
+" Ssh
+fu! Ssh()
+	if exists("g:ssh_authority")
+		execute 'edit term://ssh ' . g:ssh_authority
+	else
+		echo "g:ssh_authority not set"
+	endif
+endf
+command! -nargs=* Ssh call Ssh(<f-args>)
+
+" SCP edit command
+fu! ScpEdit(f)
+	if exists("g:ssh_authority")
+		execute 'edit scp://' . g:ssh_authority . '/' . a:f
+	else
+		echo "g:ssh_authority not set"
+	endif
+endf
+command! -nargs=* ScpEdit call ScpEdit(<f-args>)
+
 " ==================================== Tagbar ==============================
 nnoremap <silent> <Leader>tb :TagbarToggle<CR>
 
