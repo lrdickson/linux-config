@@ -17,7 +17,9 @@ Plug 'preservim/tagbar'
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'ludovicchabant/vim-gutentags'
+if executable("ctags")
+	Plug 'ludovicchabant/vim-gutentags'
+endif
 
 " Initialize plugin system
 call plug#end()
