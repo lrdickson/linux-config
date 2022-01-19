@@ -20,6 +20,7 @@ Plug 'airblade/vim-gitgutter'
 if executable("ctags")
 	Plug 'ludovicchabant/vim-gutentags'
 endif
+Plug 'tpope/vim-surround'
 
 " Initialize plugin system
 call plug#end()
