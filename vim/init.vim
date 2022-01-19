@@ -242,25 +242,40 @@ endif
 
 " =================================== ssh =================================
 
+fu! SshAuthorityIsSet()
+	if exists("g:ssh_authority")
+		return 1
+	endif
+	echo "g:ssh_authority not set"
+	return 0
+endf
+
 " Ssh
 fu! Ssh()
-	if exists("g:ssh_authority")
-		execute 'edit term://ssh ' . g:ssh_authority
-	else
-		echo "g:ssh_authority not set"
+	if (SshAuthorityIsSet() == 0)
+		return
 	endif
+	execute 'edit term://ssh ' . g:ssh_authority
 endf
 command! -nargs=* Ssh call Ssh(<f-args>)
 
 " SCP edit command
 fu! ScpEdit(f)
-	if exists("g:ssh_authority")
-		execute 'edit scp://' . g:ssh_authority . '/' . a:f
-	else
-		echo "g:ssh_authority not set"
+	if (SshAuthorityIsSet() == 0)
+		return
 	endif
+	execute 'edit scp://' . g:ssh_authority . '/' . a:f
 endf
 command! -nargs=* ScpEdit call ScpEdit(<f-args>)
+
+" SCP upload command
+fu! ScpUpload(source, destination)
+	if (SshAuthorityIsSet() == 0)
+		return
+	endif
+	execute '!scp ' . a:source . ' ' . g:ssh_authority . ':' . a:destination
+endf
+command! -nargs=* ScpUpload call ScpUpload(<f-args>)
 
 " ==================================== Tagbar ==============================
 nnoremap <silent> <Leader>tb :TagbarToggle<CR>
