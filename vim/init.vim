@@ -259,6 +259,24 @@ fu! Ssh()
 endf
 command! -nargs=* Ssh call Ssh(<f-args>)
 
+fu! SshPing()
+	" Check if ssh_authority is set
+	if (SshAuthorityIsSet() == 0)
+		return
+	endif
+
+	" Get the host
+	let result = split(g:ssh_authority, '@')
+	if len(result) < 2
+		echo "no user"
+	endif
+	let host = split(result[1], ':')[0]
+
+	" Execute the ping
+	execute '!ping ' . host
+endf
+command! -nargs=* SshPing call SshPing(<f-args>)
+
 " SCP edit command
 fu! ScpEdit(f)
 	if (SshAuthorityIsSet() == 0)
