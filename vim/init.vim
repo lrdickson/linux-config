@@ -296,7 +296,9 @@ endf
 command! -nargs=* ScpUpload call ScpUpload(<f-args>)
 
 " ==================================== Tagbar ==============================
-nnoremap <silent> <Leader>tb :TagbarToggle<CR>
+nnoremap <silent> tt :TagbarToggle<CR>
+nnoremap <silent> tn :TagbarJumpNext<CR>
+nnoremap <silent> tp :TagbarJumpPrev<CR>
 
 " =========================== Load .vimlocal if it exists ====================
 silent! so .vimlocal
