@@ -217,15 +217,15 @@ highlight GitGutterAdd ctermfg=2
 highlight GitGutterChange ctermfg=3
 highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
-nmap <silent> <Leader>gnh :GitGutterNextHunk<CR>
-nmap <silent> <Leader>gph :GitGutterPrevHunk<CR>
-nmap <silent> <Leader>gpv :GitGutterPreviewHunk<CR>
-nmap <silent> <Leader>gsh :GitGutterStageHunk<CR>
-nmap <silent> <Leader>guh :GitGutterUndoHunk<CR>
+nmap <silent> gnh :GitGutterNextHunk<CR>
+nmap <silent> gph :GitGutterPrevHunk<CR>
+nmap <silent> gpv :GitGutterPreviewHunk<CR>
+nmap <silent> gsh :GitGutterStageHunk<CR>
+nmap <silent> guh :GitGutterUndoHunk<CR>
 
 
 " ================================ Lightline config ==========================
-" Display git branch
+" DisplNextay git branch
 let g:lightline = {
 			\ 'active': {
 			\   'left': [ [ 'mode', 'paste' ],
