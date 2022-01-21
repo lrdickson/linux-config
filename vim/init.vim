@@ -277,6 +277,15 @@ fu! SshPing()
 endf
 command! -nargs=* SshPing call SshPing(<f-args>)
 
+" SCP download command
+fu! ScpDownload(source, destination)
+	if (SshAuthorityIsSet() == 0)
+		return
+	endif
+	execute '!scp ' . g:ssh_authority . ':' . a:destination . ' ' . a:source
+endf
+command! -nargs=* -complete=file ScpDownload call ScpDownload(<f-args>)
+
 " SCP edit command
 fu! ScpEdit(f)
 	if (SshAuthorityIsSet() == 0)
@@ -284,7 +293,7 @@ fu! ScpEdit(f)
 	endif
 	execute 'edit scp://' . g:ssh_authority . '/' . a:f
 endf
-command! -nargs=* ScpEdit call ScpEdit(<f-args>)
+command! -nargs=* -complete=file ScpEdit call ScpEdit(<f-args>)
 
 " SCP upload command
 fu! ScpUpload(source, destination)
@@ -293,7 +302,7 @@ fu! ScpUpload(source, destination)
 	endif
 	execute '!scp ' . a:source . ' ' . g:ssh_authority . ':' . a:destination
 endf
-command! -nargs=* ScpUpload call ScpUpload(<f-args>)
+command! -nargs=* -complete=file ScpUpload call ScpUpload(<f-args>)
 
 " ==================================== Tagbar ==============================
 nnoremap <silent> tt :TagbarToggle<CR>
