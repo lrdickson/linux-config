@@ -250,16 +250,7 @@ fu! SshAuthorityIsSet()
 	return 0
 endf
 
-" Ssh
-fu! Ssh()
-	if (SshAuthorityIsSet() == 0)
-		return
-	endif
-	execute 'edit term://ssh ' . g:ssh_authority
-endf
-command! -nargs=* Ssh call Ssh(<f-args>)
-
-fu! SshPing()
+function! SshHost()
 	" Check if ssh_authority is set
 	if (SshAuthorityIsSet() == 0)
 		return
@@ -270,12 +261,33 @@ fu! SshPing()
 	if len(result) < 2
 		echo "no user"
 	endif
-	let host = split(result[1], ':')[0]
+	return split(result[1], ':')[0]
+endfunction
 
+" Ssh
+fu! Ssh()
+	if (SshAuthorityIsSet() == 0)
+		return
+	endif
+	execute 'edit term://ssh ' . g:ssh_authority
+endf
+command! -nargs=* Ssh call Ssh(<f-args>)
+
+fu! SshPing()
 	" Execute the ping
+	let host = SshHost()
 	execute '!ping ' . host
 endf
 command! -nargs=* SshPing call SshPing(<f-args>)
+
+function! SshClearHostKey()
+	if (SshAuthorityIsSet() == 0)
+		return
+	endif
+	let host = SshHost()
+	execute '!ssh-keygen -R "' . host . '"'
+endfunction
+command! -nargs=* SshClearHostKey call SshClearHostKey(<f-args>)
 
 " SCP download command
 fu! ScpDownload(source, destination)
