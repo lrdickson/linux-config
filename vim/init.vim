@@ -294,7 +294,7 @@ fu! ScpDownload(source, destination)
 	if (SshAuthorityIsSet() == 0)
 		return
 	endif
-	execute '!scp ' . g:ssh_authority . ':' . a:destination . ' ' . a:source
+	execute '!scp -r ' . g:ssh_authority . ':' . a:source . ' ' . a:destination
 endf
 command! -nargs=* -complete=file ScpDownload call ScpDownload(<f-args>)
 
@@ -312,7 +312,7 @@ fu! ScpUpload(source, destination)
 	if (SshAuthorityIsSet() == 0)
 		return
 	endif
-	execute '!scp ' . a:source . ' ' . g:ssh_authority . ':' . a:destination
+	execute '!scp -r ' . a:source . ' ' . g:ssh_authority . ':' . a:destination
 endf
 command! -nargs=* -complete=file ScpUpload call ScpUpload(<f-args>)
 
