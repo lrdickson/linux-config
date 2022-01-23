@@ -14,6 +14,10 @@ for i in $(find fish -type f); do
 	link $i ".config/$i"
 done
 
+# gpg
+mkdir -p $HOME/.gnupg/
+link gpg-agent.conf .gnupg/gpg-agent.conf
+
 # inputrc
 link inputrc .inputrc
 
