@@ -12,8 +12,12 @@ set -x TERM xterm-256color
 # Start FZF keybindings
 fzf_key_bindings
 
-# set nvim as the default editor
-set -x EDITOR nvim
+# set the default editor
+if type -q nvim
+	set -x EDITOR nvim
+else if type -q vim
+	set -x EDITOR vim
+end
 
 # set the display variable for wsl2
 switch (cat /proc/version)

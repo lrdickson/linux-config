@@ -31,10 +31,10 @@ done
 link tmux.conf .tmux.conf
 
 # vim
-mkdir -p $HOME/.config/vim/ftplugin $HOME/.config/vim/autoload
+mkdir -p $HOME/.vim/ftplugin $HOME/.vim/autoload
 mkdir -p $HOME/.config/nvim/ftplugin $HOME/.config/nvim/autoload
 link vim/init.vim .vimrc
 for i in $(find vim -type f); do
-	link $i ".config/$i"
+	link $i ".$i"
 	link $i ".config/n$i"
 done
