@@ -265,20 +265,30 @@ function! SshHost()
 endfunction
 
 " Ssh
-fu! Ssh()
-	if (SshAuthorityIsSet() == 0)
+fu! Ssh(...)
+	if a:0 > 0
+		let ssh_authority = a:1
+	elseif (SshAuthorityIsSet() == 1)
+		let ssh_authority = g:ssh_authority
+	else
 		return
 	endif
-	execute 'edit term://ssh ' . g:ssh_authority
+	execute 'edit term://ssh ' . ssh_authority
 endf
 command! -nargs=* Ssh call Ssh(<f-args>)
 
-fu! SshPing()
+fu! Ping(...)
+	" Get the host
+	if a:0 > 0
+		let host = a:1
+	else
+		let host = SshHost()
+	endif
+
 	" Execute the ping
-	let host = SshHost()
 	execute '!ping ' . host
 endf
-command! -nargs=* SshPing call SshPing(<f-args>)
+command! -nargs=* Ping call Ping(<f-args>)
 
 function! SshClearHostKey()
 	if (SshAuthorityIsSet() == 0)
