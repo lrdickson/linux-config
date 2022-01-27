@@ -10,7 +10,7 @@ end
 set -x TERM xterm-256color
 
 # Make NNN easier to read
-set -x NNN_COLOR 6666
+set -x NNN_COLORS 6666
 
 # Start FZF keybindings
 fzf_key_bindings
