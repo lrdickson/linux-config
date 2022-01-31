@@ -28,6 +28,8 @@ call plug#end()
 " Set the colorscheme
 if has('nvim-0.4')
 	colorscheme solarized8_high
+else
+	colorscheme atom
 endif
 
 " Show trailing whitepace and spaces before a tab:
