@@ -7,7 +7,7 @@ if test -e ~/.fishrc
 end
 
 # Fix terminal colors
-set -x TERM xterm-256color
+#set -x TERM xterm-256color
 
 # Make NNN easier to read
 set -x NNN_COLORS 6666

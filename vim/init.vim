@@ -242,6 +242,85 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+" ================================== remote neovim ========================
+
+fu! RemoteCommand(...)
+	if a:0 > 0
+		let socket = a:1
+	else
+		let socket = '/tmp/nvimsocket'
+	endif
+	if has('nvim')
+		if (executable('nvr') == 0)
+			echo "Need to install neovim-remote if using neovim"
+			return
+		endif
+		let cmd = '!nvr --servername ' . socket
+	endif
+	return cmd
+endfunction
+
+fu! SendFile(...)
+	if a:0 > 0
+		let cmd = RemoteCommand(a:1)
+	else
+		let cmd = RemoteCommand()
+	endif
+	if (cmd is v:null)
+		return
+	end
+	let fl = expand('%')
+	quit
+	execute cmd . ' --remote-silent ' . fl
+endf
+command! -nargs=* -complete=file SendFile call SendFile(<f-args>)
+
+fu! SendFileTab(...)
+	if a:0 > 0
+		let cmd = RemoteCommand(a:1)
+	else
+		let cmd = RemoteCommand()
+	endif
+	if (cmd is v:null)
+		return
+	end
+	let fl = expand('%')
+	quit
+	execute cmd . ' --remote-tab-silent ' . fl
+endf
+command! -nargs=* -complete=file SendFileTab call SendFileTab(<f-args>)
+
+fu! SendFileSplit(...)
+	if a:0 > 0
+		let cmd = RemoteCommand(a:1)
+	else
+		let cmd = RemoteCommand()
+	endif
+	if (cmd is v:null)
+		return
+	end
+	let fl = expand('%')
+	quit
+	execute cmd . ' -o ' . fl
+endf
+command! -nargs=* -complete=file SendFileSplit call SendFileSplit(<f-args>)
+
+fu! SendFileVSplit(...)
+	if a:0 > 0
+		let cmd = RemoteCommand(a:1)
+	else
+		let cmd = RemoteCommand()
+	endif
+	if (cmd is v:null)
+		return
+	end
+	let fl = expand('%')
+	quit
+	execute cmd . ' -O ' . fl
+endf
+command! -nargs=* -complete=file SendFileVSplit call SendFileVSplit(<f-args>)
+
+
 " =================================== ssh =================================
 
 fu! SshAuthorityIsSet()
