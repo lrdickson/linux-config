@@ -52,7 +52,7 @@ autocmd FileChangedShellPost *
 
 " Set Tab Width Command
 fu! SetTabWidth(w)
-	let &l:shiftwidth = a:w
+	"let &l:shiftwidth = a:w
 	let &l:tabstop = a:w
 	let &l:softtabstop = a:w
 endf
@@ -245,78 +245,66 @@ endif
 " ================================== remote neovim ========================
 
 fu! RemoteCommand(...)
-	if a:0 > 0
-		let socket = a:1
-	else
-		let socket = '/tmp/nvimsocket'
-	endif
 	if has('nvim')
 		if (executable('nvr') == 0)
 			echo "Need to install neovim-remote if using neovim"
-			return
+			return 0
 		endif
-		let cmd = '!nvr --servername ' . socket
+		let cmd = '!nvr --servername '
 	endif
-	return cmd
+	if a:0 == 0
+		echo 'no arguments passed'
+	endif
+	if a:0 == 1
+		let cmd = cmd . ' /tmp/nvimsocket ' . a:1
+	elseif a:0 > 1
+		let cmd = cmd . a:1 . ' ' . a:2
+	endif
+	execute cmd
+	return 1
 endfunction
 
 fu! SendFile(...)
-	if a:0 > 0
-		let cmd = RemoteCommand(a:1)
-	else
-		let cmd = RemoteCommand()
-	endif
-	if (cmd is v:null)
-		return
-	end
-	let fl = expand('%')
+	let cmd = '--remote-silent ' . expand('%')
 	quit
-	execute cmd . ' --remote-silent ' . fl
+	if a:0 > 0
+		RemoteCommand(a:1, cmd)
+	else
+		RemoteCommand(cmd)
+	endif
 endf
 command! -nargs=* -complete=file SendFile call SendFile(<f-args>)
 
 fu! SendFileTab(...)
-	if a:0 > 0
-		let cmd = RemoteCommand(a:1)
-	else
-		let cmd = RemoteCommand()
-	endif
-	if (cmd is v:null)
-		return
-	end
-	let fl = expand('%')
+	let cmd = '--remote-tab-silent ' . expand('%')
 	quit
-	execute cmd . ' --remote-tab-silent ' . fl
+	if a:0 > 0
+		RemoteCommand(a:1, cmd)
+	else
+		RemoteCommand(cmd)
+	endif
 endf
 command! -nargs=* -complete=file SendFileTab call SendFileTab(<f-args>)
 
 fu! SendFileSplit(...)
-	if a:0 > 0
-		let cmd = RemoteCommand(a:1)
-	else
-		let cmd = RemoteCommand()
-	endif
-	if (cmd is v:null)
-		return
-	end
-	let fl = expand('%')
+	let cmd = '-o ' . expand('%')
 	quit
-	execute cmd . ' -o ' . fl
+	if a:0 > 0
+		RemoteCommand(a:1, cmd)
+	else
+		RemoteCommand(cmd)
+	endif
 endf
 command! -nargs=* -complete=file SendFileSplit call SendFileSplit(<f-args>)
 
 fu! SendFileVSplit(...)
-	if a:0 > 0
-		let cmd = RemoteCommand(a:1)
-	else
-		let cmd = RemoteCommand()
-	endif
-	if (cmd is v:null)
-		return
-	end
-	let fl = expand('%')
+	let cmd = '-O ' . expand('%')
 	quit
-	execute cmd . ' -O ' . fl
+	if a:0 > 0
+		RemoteCommand(a:1, cmd)
+	else
+		RemoteCommand(cmd)
+	endif
 endf
 command! -nargs=* -complete=file SendFileVSplit call SendFileVSplit(<f-args>)
 
