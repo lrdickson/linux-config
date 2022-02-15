@@ -244,21 +244,23 @@ endif
 
 " ================================== remote neovim ========================
 
-fu! RemoteCommand(...)
+function! RemoteCommand(...)
 	if has('nvim')
 		if (executable('nvr') == 0)
 			echo "Need to install neovim-remote if using neovim"
 			return 0
 		endif
-		let cmd = '!nvr --servername '
+		let cmdStart = '!nvr --servername '
 	endif
 	if a:0 == 0
 		echo 'no arguments passed'
 	endif
 	if a:0 == 1
-		let cmd = cmd . ' /tmp/nvimsocket ' . a:1
+		let cmdStart = cmdStart . ' /tmp/nvimsocket '
+		let cmd = cmdStart . a:1
 	elseif a:0 > 1
-		let cmd = cmd . a:1 . ' ' . a:2
+		let cmdStart = cmdStart . a:1 . ' '
+		let cmd = cmdStart . a:2
 	endif
 	execute cmd
 	return 1
@@ -268,9 +270,11 @@ fu! SendFile(...)
 	let cmd = '--remote-silent ' . expand('%')
 	quit
 	if a:0 > 0
-		RemoteCommand(a:1, cmd)
+		call RemoteCommand(a:1, cmd)
+		call RemoteCommand(a:1, '--remote-send E')
 	else
-		RemoteCommand(cmd)
+		call RemoteCommand(cmd)
+		call RemoteCommand('--remote-send E')
 	endif
 endf
 command! -nargs=* -complete=file SendFile call SendFile(<f-args>)
@@ -279,9 +283,11 @@ fu! SendFileTab(...)
 	let cmd = '--remote-tab-silent ' . expand('%')
 	quit
 	if a:0 > 0
-		RemoteCommand(a:1, cmd)
+		call RemoteCommand(a:1, cmd)
+		call RemoteCommand(a:1, '--remote-send E')
 	else
-		RemoteCommand(cmd)
+		call RemoteCommand(cmd)
+		call RemoteCommand('--remote-send E')
 	endif
 endf
 command! -nargs=* -complete=file SendFileTab call SendFileTab(<f-args>)
@@ -290,9 +296,11 @@ fu! SendFileSplit(...)
 	let cmd = '-o ' . expand('%')
 	quit
 	if a:0 > 0
-		RemoteCommand(a:1, cmd)
+		call RemoteCommand(a:1, cmd)
+		call RemoteCommand(a:1, '--remote-send E')
 	else
-		RemoteCommand(cmd)
+		call RemoteCommand(cmd)
+		call RemoteCommand('--remote-send E')
 	endif
 endf
 command! -nargs=* -complete=file SendFileSplit call SendFileSplit(<f-args>)
@@ -301,9 +309,11 @@ fu! SendFileVSplit(...)
 	let cmd = '-O ' . expand('%')
 	quit
 	if a:0 > 0
-		RemoteCommand(a:1, cmd)
+		call RemoteCommand(a:1, cmd)
+		call RemoteCommand(a:1, '--remote-send E')
 	else
-		RemoteCommand(cmd)
+		call RemoteCommand(cmd)
+		call RemoteCommand('--remote-send E')
 	endif
 endf
 command! -nargs=* -complete=file SendFileVSplit call SendFileVSplit(<f-args>)

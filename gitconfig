@@ -1,4 +1,10 @@
+[user]
+        name = Lyndsey Dickson
+[core]
+        autocrlf = false
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
 	prompt = false
+[pull]
+        rebase = false

@@ -14,6 +14,9 @@ for i in $(find fish -type f); do
 	link $i ".config/$i"
 done
 
+# gitconfig
+link gitconfig .gitconfig
+
 # gpg
 mkdir -p $HOME/.gnupg/
 link gpg-agent.conf .gnupg/gpg-agent.conf
