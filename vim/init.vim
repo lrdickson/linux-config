@@ -12,7 +12,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 "Plug 'preservim/nerdtree'
-"Plug 'mcchrish/nnn.vim'
+Plug 'mcchrish/nnn.vim'
 Plug 'preservim/tagbar'
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'tpope/vim-fugitive'
@@ -241,6 +241,23 @@ let g:lightline = {
 if !has('gui_running')
   set t_Co=256
 endif
+
+
+" ================================== nnn ========================
+" Use the same NNN session within a vim instance
+let g:nnn#session = 'local'
+
+" Ssh
+fu! NNN(...)
+	if has('nvim')
+		if (executable('nvr') == 0)
+			echo "Need to install neovim-remote if using neovim"
+			return 0
+		endif
+	endif
+	execute 'edit term://EDITOR='nnn'
+endf
+command! -nargs=* NNN call NNN(<f-args>)
 
 " ================================== remote neovim ========================
 
