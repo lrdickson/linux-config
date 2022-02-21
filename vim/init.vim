@@ -247,7 +247,8 @@ endif
 " Use the same NNN session within a vim instance
 let g:nnn#session = 'local'
 
-" Ssh
+" NNN
+echo $EDITOR
 fu! NNN(...)
 	if has('nvim')
 		if (executable('nvr') == 0)
@@ -255,7 +256,8 @@ fu! NNN(...)
 			return 0
 		endif
 	endif
-	execute 'edit term://EDITOR='nnn'
+	terminal export EDITOR='nvr --remote-tab-silent' && nnn
+	"let $EDITOR = tmp
 endf
 command! -nargs=* NNN call NNN(<f-args>)
 
