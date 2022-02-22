@@ -49,6 +49,10 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
+if has('nvim') && !empty($SSH_CONNECTION) && !empty($DISPLAY)
+	unlet $DISPLAY
+endif
+
 " Set Tab Width Command
 fu! SetTabWidth(w)
 	"let &l:shiftwidth = a:w
@@ -254,11 +258,14 @@ fu! NNN(...)
 		if (executable('nvr') == 0)
 			echo "Need to install neovim-remote if using neovim"
 			return 0
+		"else
+			"let $NNN_OPENER = 'nvr --remote-tab-silent'
 		endif
 	endif
+	"terminal nnn
 	terminal
-	call jobsend(b:terminal_job_id, "export EDITOR='nvr --remote-tab-silent'\n")
-	call jobsend(b:terminal_job_id, "nnn\n")
+	call jobsend(b:terminal_job_id, "export NNN_OPENER='nvr --remote-tab-silent'\n")
+	call jobsend(b:terminal_job_id, "nnn -c\n")
 	call feedkeys('i')
 endf
 command! -nargs=* NNN call NNN(<f-args>)
