@@ -12,7 +12,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 "Plug 'preservim/nerdtree'
-Plug 'mcchrish/nnn.vim'
 Plug 'preservim/tagbar'
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'tpope/vim-fugitive'
@@ -244,22 +243,26 @@ endif
 
 
 " ================================== nnn ========================
-" Use the same NNN session within a vim instance
-let g:nnn#session = 'local'
 
 " NNN
-echo $EDITOR
 fu! NNN(...)
+	if (executable('nnn') == 0)
+		echo "Need to install nnn before using it"
+		return 0
+	endif
 	if has('nvim')
 		if (executable('nvr') == 0)
 			echo "Need to install neovim-remote if using neovim"
 			return 0
 		endif
 	endif
-	terminal export EDITOR='nvr --remote-tab-silent' && nnn
-	"let $EDITOR = tmp
+	terminal
+	call jobsend(b:terminal_job_id, "export EDITOR='nvr --remote-tab-silent'\n")
+	call jobsend(b:terminal_job_id, "nnn\n")
+	call feedkeys('i')
 endf
 command! -nargs=* NNN call NNN(<f-args>)
+nmap <leader>n :NNN<CR>
 
 " ================================== remote neovim ========================
 
