@@ -7,6 +7,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 if executable("node")
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
@@ -19,6 +20,7 @@ Plug 'airblade/vim-gitgutter'
 if executable("ctags")
 	Plug 'ludovicchabant/vim-gutentags'
 endif
+Plug 'LnL7/vim-nix'
 Plug 'tpope/vim-surround'
 
 " Initialize plugin system
