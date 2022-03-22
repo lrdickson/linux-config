@@ -15,6 +15,7 @@ Plug 'preservim/nerdcommenter'
 "Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'vim-autoformat/vim-autoformat'
+Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 if executable("ctags")
@@ -206,6 +207,12 @@ if executable("node")
 	" Resume latest coc list.
 	nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 endif
+
+" =============================== FZF ===========================
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " =============================== FZF ===========================
 "nnoremap <silent> <C-f> :Files<CR>
