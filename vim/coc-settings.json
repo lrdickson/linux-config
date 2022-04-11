@@ -1,3 +1,9 @@
 {
-  "diagnostic.checkCurrentLine": true
+	"diagnostic.checkCurrentLine": false,
+	"languageserver": {
+		"nim": {
+			"command": "nimlsp",
+			"filetypes": ["nim"]
+		}
+	}
 }

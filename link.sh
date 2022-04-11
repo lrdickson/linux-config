@@ -8,6 +8,12 @@ link() {
 	fi
 }
 
+# Links to perform when not using nixos
+if [[ $(cat /proc/version) != *"NixOS"* ]]; then
+	# tmux
+	link tmux.conf .tmux.conf
+fi
+
 # fish
 mkdir -p $HOME/.config/fish/conf.d/
 for i in $(find fish -type f); do
@@ -29,9 +35,6 @@ mkdir -p $HOME/.ssh/
 for i in $(find ssh -type f); do
 	link $i ".$i"
 done
-
-# tmux
-link tmux.conf .tmux.conf
 
 # vim
 mkdir -p $HOME/.vim/ftplugin $HOME/.vim/autoload
