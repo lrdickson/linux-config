@@ -418,11 +418,19 @@ endfunction
 command! -nargs=* SshClearHostKey call SshClearHostKey(<f-args>)
 
 " SCP download command
-fu! ScpDownload(source, destination)
+fu! ScpDownload(...)
+	let destination = '.'
+	if a:0 < 1
+		echo 'Not enough arguments'
+	elseif a:0 > 1
+		let destination = a:2
+	endif
+	let source = a:1
+
 	if (SshAuthorityIsSet() == 0)
 		return
 	endif
-	execute '!scp -r ' . g:ssh_authority . ':' . a:source . ' ' . a:destination
+	execute '!scp -r ' . g:ssh_authority . ':' . source . ' ' . destination
 endf
 command! -nargs=* -complete=file ScpDownload call ScpDownload(<f-args>)
 
@@ -436,11 +444,19 @@ endf
 command! -nargs=* -complete=file ScpEdit call ScpEdit(<f-args>)
 
 " SCP upload command
-fu! ScpUpload(source, destination)
+fu! ScpUpload(...)
+	let destination = '.'
+	if a:0 < 1
+		echo 'Not enough arguments'
+	elseif a:0 > 1
+		let destination = a:2
+	endif
+	let source = a:1
+
 	if (SshAuthorityIsSet() == 0)
 		return
 	endif
-	execute '!scp -r ' . a:source . ' ' . g:ssh_authority . ':' . a:destination
+	execute '!scp -r ' . source . ' ' . g:ssh_authority . ':' . destination
 endf
 command! -nargs=* -complete=file ScpUpload call ScpUpload(<f-args>)
 
