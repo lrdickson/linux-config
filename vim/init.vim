@@ -2,7 +2,7 @@
 " Specify a directory for plugins
 call plug#begin('~/.config/vim-plug')
 
-"Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 Plug 'rafi/awesome-vim-colorschemes'
 if executable("node")
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -14,6 +14,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 "Plug 'preservim/nerdtree'
 Plug 'zah/nim.vim'
+"Plug 'OmniSharp/omnisharp-vim'
 Plug 'preservim/tagbar'
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'junegunn/vim-easy-align'
@@ -280,6 +281,8 @@ fu! NNN(...)
 endf
 command! -nargs=* NNN call NNN(<f-args>)
 nmap <leader>n :NNN<CR>
+
+" ================================== OmniSharp ========================
 
 " ================================== remote neovim ========================
 
