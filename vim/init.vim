@@ -210,7 +210,11 @@ if executable("node")
 	nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 endif
 
-" =============================== FZF ===========================
+" =============================== diff ===========================
+nmap <Leader>dg :diffget<CR>
+nmap <Leader>dp :diffput<CR>
+
+" =============================== EasyAlign ===========================
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
