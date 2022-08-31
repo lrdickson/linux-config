@@ -66,6 +66,12 @@ fu! SetTabWidth(w)
 endf
 command! -nargs=* SetTabWidth call SetTabWidth(<f-args>)
 
+" Add cwindow keyboard shortcuts
+nmap <Leader>cw :cwindow<CR>
+nmap <Leader>cl :cclose<CR>
+nmap <Leader>cf :cnext<CR>
+nmap <Leader>cp :cprevious<CR>
+
 " ======================= Autoformat ======================================
 nnoremap <silent> <C-k> :Autoformat<CR>
 
