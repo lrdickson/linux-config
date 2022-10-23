@@ -4,6 +4,7 @@
 " Specify a directory for plugins
 call plug#begin('~/.config/vim-plug')
 
+Plug 'dense-analysis/ale'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -75,6 +76,13 @@ set omnifunc=syntaxcomplete#Complete
 " IDE like autocompletion
 " https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 "set completeopt=longest,menuone
+
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+"
+" You should not turn this setting on if you wish to use ALE as a completion
+" source for other completion plugins, like Deoplete.
+let g:ale_completion_enabled = 1
 
 " ======================= Autoformat ======================================
 nnoremap <silent> <C-k> :Autoformat<CR>
