@@ -67,6 +67,15 @@ nmap <Leader>cl :cclose<CR>
 nmap <Leader>cf :cnext<CR>
 nmap <Leader>cp :cprevious<CR>
 
+" Omni Completion
+" https://medium.com/usevim/vim-101-completion-compendium-97b4ebc3a45a
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" IDE like autocompletion
+" https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+"set completeopt=longest,menuone
+
 " ======================= Autoformat ======================================
 nnoremap <silent> <C-k> :Autoformat<CR>
 
