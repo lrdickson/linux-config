@@ -6,6 +6,9 @@ call plug#begin('~/.config/vim-plug')
 
 Plug 'dense-analysis/ale'
 Plug 'rafi/awesome-vim-colorschemes'
+if executable("node")
+       Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
@@ -83,6 +86,18 @@ set omnifunc=syntaxcomplete#Complete
 " You should not turn this setting on if you wish to use ALE as a completion
 " source for other completion plugins, like Deoplete.
 let g:ale_completion_enabled = 1
+
+" Source if exists function
+function! SourceIfExists(file)
+	if filereadable(expand(a:file))
+		exe 'source' a:file
+	endif
+endfunction
+
+" Initialize coc
+if executable("node")
+	call SourceIfExists("~/.vim/init_coc.vim")
+endif
 
 " ======================= Autoformat ======================================
 nnoremap <silent> <C-k> :Autoformat<CR>
