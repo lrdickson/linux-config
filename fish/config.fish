@@ -2,6 +2,7 @@
 fish_vi_key_bindings
 
 # load .fishrc if it exists
+echo hello
 if test -e ~/.fishrc
 	. ~/.fishrc
 end
