@@ -19,6 +19,7 @@ Plug 'vim-autoformat/vim-autoformat'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
 if executable("ctags")
 	Plug 'ludovicchabant/vim-gutentags'
 endif
