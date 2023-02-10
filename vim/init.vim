@@ -1,6 +1,7 @@
 
 " to determine what scripts are run on startup, use scriptnames
 
+
 " Specify a directory for plugins
 call plug#begin('~/.config/vim-plug')
 
@@ -31,7 +32,7 @@ call plug#end()
 
 " Set the colorscheme
 if has('nvim-0.4')
-	colorscheme solarized8_high
+	colorscheme deus
 else
 	colorscheme atom
 endif
@@ -94,6 +95,7 @@ function! SourceIfExists(file)
 		exe 'source' a:file
 	endif
 endfunction
+
 
 " Initialize coc
 if executable("node")
