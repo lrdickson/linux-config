@@ -16,6 +16,7 @@ fi
 
 # fish
 mkdir -p $HOME/.config/fish/conf.d/
+mkdir -p $HOME/.config/fish/functions/
 for i in $(find fish -type f); do
 	link $i ".config/$i"
 done
