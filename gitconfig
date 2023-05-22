@@ -9,3 +9,17 @@
 	prompt = false
 [pull]
         rebase = false
+[safe]
+	directory = /c/Users/U215393/Projects/go/codeloads
+	directory = /c/Users/U215393/Projects/go/codeloads
+	directory = /c/Users/U215393/Projects/git/trafficcontroller
+	directory = /c/Users/U215393/Projects/git/trafficcontroller.git
+	directory = /c/Users/U215393/Projects/git/modem.git
+	directory = /c/Users/U215393/Projects/two47/Modem
+	directory = /c/Users/U215393/Projects/two47/trafficcontroller
+	directory = /c/Users/U215393/Projects/mastrv/mvconfig
+	directory = /c/Users/U215393/Projects/mastrv/mvconfig2
+	directory = /c/Users/U215393/Projects/git/mvconfig.git
+	directory = /c/Users/U215393/Projects/mastrv/basestationsoftware
+	directory = /c/Users/U215393/Projects/two47/two47_swtools
+	directory = /c/Users/U215393/Projects/go/timecard

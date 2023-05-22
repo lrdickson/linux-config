@@ -14,13 +14,6 @@ if [[ $(cat /proc/version) != *"NixOS"* ]]; then
 	link tmux.conf .tmux.conf
 fi
 
-# fish
-mkdir -p $HOME/.config/fish/conf.d/
-mkdir -p $HOME/.config/fish/functions/
-for i in $(find fish -type f); do
-	link $i ".config/$i"
-done
-
 # gitconfig
 link gitconfig .gitconfig
 
@@ -46,6 +39,7 @@ for i in $(find vim -type f); do
 	link $i ".config/n$i"
 done
 
+# Link everything in the config directory
 for i in $(find config -type d); do
 	mkdir -p "$HOME/.$i"
 done
