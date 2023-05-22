@@ -45,3 +45,10 @@ for i in $(find vim -type f); do
 	link $i ".$i"
 	link $i ".config/n$i"
 done
+
+for i in $(find config -type d); do
+	mkdir -p "$HOME/.$i"
+done
+for i in $(find config -type f); do
+	link $i ".$i"
+done
