@@ -26,6 +26,7 @@ if executable("ctags")
 endif
 Plug 'LnL7/vim-nix'
 Plug 'tpope/vim-surround'
+Plug 'ziglang/zig.vim'
 
 " Initialize plugin system
 call plug#end()
