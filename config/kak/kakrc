@@ -6,8 +6,36 @@ evaluate-commands %sh{
     printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
 }
 plug "andreyorst/plug.kak" noload
-plug "enricozb/tabs.kak"
+plug "andreyorst/fzf.kak"
+plug "andreyorst/smarttab.kak"
+plug "andreyorst/kaktree" config %{
+    hook global WinSetOption filetype=kaktree %{
+        remove-highlighter buffer/numbers
+        remove-highlighter buffer/matching
+        remove-highlighter buffer/wrap
+        remove-highlighter buffer/show-whitespaces
+    }
+    kaktree-enable
+}
 
-set-option global tabs_modelinefmt '%val{cursor_line}:%val{cursor_char_column} {{mode_info}} '
-set-option global tabs_options --minified
-tabs-recommended-keys
+plug "kak-lsp/kak-lsp" %{
+    map global normal <c-h> ': lsp-hover<ret>'
+    map global normal <c-r> ': lsp-disable;lsp-enable<ret>'
+} do %{
+    cargo install --locked --force --path .
+}
+
+plug 'delapouite/kakoune-buffers' %{
+    map global normal <space> ': enter-buffers-mode<ret>' -docstring 'buffers'
+}
+
+map global normal <c-p> ': fzf-mode<ret>'
+
+# Set the colorscheme
+colorscheme kaleidoscope-dark
+
+# Display line numbers
+add-highlighter global/ number-lines -hlcursor
+
+# Highlight trailing whitespace
+add-highlighter global/ regex \h+$ 0:Error
