@@ -30,9 +30,13 @@ plug 'delapouite/kakoune-buffers' %{
 }
 
 map global normal <c-p> ': fzf-mode<ret>'
+map global goto ] '<esc>:ctags-search<ret>' -docstring 'ctags search'
 
 # Set the colorscheme
 colorscheme kaleidoscope-dark
+
+# Highlight TODO, FIXME, XXX, NOTE
+add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
 
 # Display line numbers
 add-highlighter global/ number-lines -hlcursor
