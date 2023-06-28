@@ -17,6 +17,9 @@ plug "andreyorst/kaktree" config %{
     }
     kaktree-enable
 }
+plug "harryoooooooooo/src-outline.kak" %{
+    map global user o ': src-outline<ret>' -docstring 'outline'
+}
 
 plug "kak-lsp/kak-lsp" %{
     map global normal <c-h> ': lsp-hover<ret>'
@@ -26,14 +29,19 @@ plug "kak-lsp/kak-lsp" %{
 }
 
 plug 'delapouite/kakoune-buffers' %{
-    map global normal <space> ': enter-buffers-mode<ret>' -docstring 'buffers'
+    map global user b ': enter-buffers-mode<ret>' -docstring 'buffers'
+    map global user B ': enter-user-mode -lock buffers<ret>' -docstring 'buffers (lock)'
 }
 
 map global normal <c-p> ': fzf-mode<ret>'
 map global goto ] '<esc>:ctags-search<ret>' -docstring 'ctags search'
+map global user c ': comment-line<ret>' -docstring 'comment line'
 
 # Set the colorscheme
 colorscheme kaleidoscope-dark
+
+# Softwrap long lines
+add-highlighter global/ wrap -word -indent
 
 # Highlight TODO, FIXME, XXX, NOTE
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
