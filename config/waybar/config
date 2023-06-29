@@ -7,6 +7,10 @@
 	"modules-left": [
 		"wlr/workspaces",
 		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"hyprland/window",
+		"custom/right-arrow-dark",
+		"custom/space-light"
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -55,10 +59,19 @@
 		"format": "",
 		"tooltip": false
 	},
+	"custom/space-light": {
+		"format": " ",
+		"tooltip": false
+	},
 
 	"wlr/workspaces": {
 		"disable-scroll": true,
 		"format": "{name}"
+	},
+
+	"hyprland/window": {
+	    "format": " {} ",
+	    "separate-outputs": true
 	},
 
 	"clock#1": {

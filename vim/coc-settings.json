@@ -12,6 +12,14 @@
 			"filetypes": ["cs"],
 			"rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"],
 			"progressOnInitialization": false
+		},
+		"zig": {
+			"command": "zls",
+			"debugLog": true,
+			"enabled": false,
+			"filetypes": ["zig"],
+			"path": "zls",
+			"startUpMessage": true
 		}
 	}
 }

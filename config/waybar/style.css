@@ -9,7 +9,8 @@ window#waybar {
 }
 
 #custom-right-arrow-dark,
-#custom-left-arrow-dark {
+#custom-left-arrow-dark,
+#custom-space-light {
 	font-size: 21px;
 	color: #1a1a1a;
 }
@@ -21,6 +22,7 @@ window#waybar {
 }
 
 #workspaces,
+#window,
 #clock.1,
 #clock.2,
 #clock.3,
