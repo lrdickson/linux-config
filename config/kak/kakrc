@@ -6,17 +6,11 @@ evaluate-commands %sh{
     printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
 }
 plug "andreyorst/plug.kak" noload
-plug "andreyorst/fzf.kak"
-plug "andreyorst/smarttab.kak"
-plug "andreyorst/kaktree" config %{
-    hook global WinSetOption filetype=kaktree %{
-        remove-highlighter buffer/numbers
-        remove-highlighter buffer/matching
-        remove-highlighter buffer/wrap
-        remove-highlighter buffer/show-whitespaces
-    }
-    kaktree-enable
+plug "andreyorst/fzf.kak" %{
+    map global normal <c-p> ': fzf-mode<ret>'
 }
+plug "andreyorst/smarttab.kak"
+
 plug "harryoooooooooo/src-outline.kak" %{
     map global user o ': src-outline<ret>' -docstring 'outline'
 }
@@ -36,14 +30,31 @@ plug "kak-lsp/kak-lsp" %{
     cargo install --locked --force --path .
 }
 
+plug 'jordan-yee/kakoune-git-mode' %{
+    # Set structured commit message options here
+    # set-option global git_mode_use_structured_quick_commit true
+    # set-option git_mode_commit_prefixes 'feat::fix::docs::refactor::build::test::style::BREAKING CHANGE::'
+    # set-option git_mode_branch_label_regex 'SCRUM-[0-9]+'
+
+    # Declare git mode with default set of mappings
+    declare-git-mode
+
+    # Suggested user mode mapping
+    map global user g ': enter-user-mode git<ret>' -docstring "git mode"
+}
+
 plug 'delapouite/kakoune-buffers' %{
     map global user b ': enter-buffers-mode<ret>' -docstring 'buffers'
     map global user B ': enter-user-mode -lock buffers<ret>' -docstring 'buffers (lock)'
 }
 
-map global normal <c-p> ': fzf-mode<ret>'
-map global goto ] '<esc>:ctags-search<ret>' -docstring 'ctags search'
+# Some key mappings
+map global goto ] '<esc>: ctags-search<ret>' -docstring 'ctags search'
 map global user c ': comment-line<ret>' -docstring 'comment line'
+
+# Run git show-diff when openning or saving a file
+hook global BufWritePost .* %{ git show-diff }
+hook global BufOpenFile .* %{ git show-diff }
 
 # Set the colorscheme
 colorscheme kaleidoscope-dark

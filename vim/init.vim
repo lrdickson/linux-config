@@ -12,6 +12,9 @@ if executable("node")
 endif
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+if has('nvim-0.4.4')
+	Plug 'jbyuki/instant.nvim'
+endif
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'zah/nim.vim'
@@ -30,6 +33,8 @@ Plug 'ziglang/zig.vim'
 
 " Initialize plugin system
 call plug#end()
+
+let g:instant_username = "lyn"
 
 " Set the colorscheme
 if has('nvim-0.4')
@@ -57,12 +62,12 @@ autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 if has('nvim') && !empty($SSH_CONNECTION) && !empty($DISPLAY)
-	unlet $DISPLAY
+	"unlet $DISPLAY
 endif
 
 " Set Tab Width Command
 fu! SetTabWidth(w)
-	"let &l:shiftwidth = a:w
+	let &l:shiftwidth = a:w
 	let &l:tabstop = a:w
 	let &l:softtabstop = a:w
 endf

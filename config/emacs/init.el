@@ -96,6 +96,7 @@ ad-do-it
 ;;   :config
 ;;   (require 'helm-autoloads))
 
+;; lsp-mode
 (use-package lsp-mode
   :ensure lsp-mode)
 
