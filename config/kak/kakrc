@@ -59,6 +59,18 @@ hook global BufOpenFile .* %{ git show-diff }
 # Set the colorscheme
 colorscheme kaleidoscope-dark
 
+# Split command opens a new window to the current buffer and line number
+define-command split -params .. -docstring '
+split [<commands>]: create a new Kakoune client
+The ''terminal'' alias is being used to determine the user''s preferred terminal emulator
+The optional arguments are passed as commands to the new client' \
+%{
+    terminal kak -c %val{session} -e "buffer %val{buffile}; exec %val{cursor_line}g; %arg{@}"
+}
+complete-command -menu split command
+alias global sp split
+map global user s ': split<ret>' -docstring 'open new window'
+
 # Softwrap long lines
 add-highlighter global/ wrap -word -indent
 
