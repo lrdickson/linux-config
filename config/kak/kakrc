@@ -60,6 +60,7 @@ hook global BufOpenFile .* %{ git show-diff }
 colorscheme kaleidoscope-dark
 
 # Split command opens a new window to the current buffer and line number
+# Note: this splits in the same direction as vim vsplit
 define-command split -params .. -docstring '
 split [<commands>]: create a new Kakoune client
 The ''terminal'' alias is being used to determine the user''s preferred terminal emulator
@@ -69,7 +70,19 @@ The optional arguments are passed as commands to the new client' \
 }
 complete-command -menu split command
 alias global sp split
-map global user s ': split<ret>' -docstring 'open new window'
+map global user s ': split<ret>' -docstring 'horizontal split'
+
+# Vertical split command
+# Note: this splits in the same direction as vim split
+define-command vsplit -params .. -docstring '
+vsplit [<commands>]: split the current tmux window vertically and create a new Kakoune client
+The optional arguments are passed as commands to the new client' \
+%{
+    tmux-terminal-vertical kak -c %val{session} -e "buffer %val{buffile}; exec %val{cursor_line}g; %arg{@}"
+}
+complete-command -menu split command
+alias global vs vsplit
+map global user v ': vsplit<ret>' -docstring 'vertical split'
 
 # Softwrap long lines
 add-highlighter global/ wrap -word -indent
