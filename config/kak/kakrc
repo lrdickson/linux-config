@@ -56,8 +56,10 @@ map global user c ': comment-line<ret>' -docstring 'comment line'
 hook global BufWritePost .* %{ git show-diff }
 hook global BufOpenFile .* %{ git show-diff }
 
-# Set the colorscheme
-colorscheme kaleidoscope-dark
+# Theme
+# colorscheme kaleidoscope-dark
+colorscheme gruvbox-dark
+set-option global ui_options terminal_assistant=cat
 
 # Split command opens a new window to the current buffer and line number
 # Note: this splits in the same direction as vim vsplit
