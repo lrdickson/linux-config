@@ -89,6 +89,7 @@ map global user v ': vsplit<ret>' -docstring 'vertical split'
 # Add spelling mode
 declare-user-mode spell
 map global user s ': enter-user-mode spell<ret>' -docstring 'spell'
+map global user S ': enter-user-mode -lock spell<ret>' -docstring 'spell (lock)'
 map global spell s ': spell<ret>' -docstring 'activate spell checking'
 map global spell n ': spell-next<ret>' -docstring 'go to next spelling error'
 map global spell r ': spell-replace<ret>' -docstring 'suggest replacement for selected word'
