@@ -16,10 +16,14 @@ set -x NNN_COLORS 6666
 fzf_key_bindings
 
 # set the default editor
-if type -q nvim
+if type -q kak
+	set -x EDITOR kak
+else if type -q nvim
 	set -x EDITOR nvim
 else if type -q vim
 	set -x EDITOR vim
+else if type -q vi
+	set -x EDITOR vi
 end
 
 # set the display variable for wsl2
