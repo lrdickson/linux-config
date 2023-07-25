@@ -46,6 +46,7 @@ plug 'jordan-yee/kakoune-git-mode' %{
 plug 'delapouite/kakoune-buffers' %{
     map global user b ': enter-buffers-mode<ret>' -docstring 'buffers'
     map global user B ': enter-user-mode -lock buffers<ret>' -docstring 'buffers (lock)'
+    map global buffers b ': pick-buffers<ret>' -docstring 'info'
 }
 
 # Some key mappings
