@@ -51,6 +51,7 @@ plug 'delapouite/kakoune-buffers' %{
 
 # Some key mappings
 map global goto ] '<esc>: ctags-search<ret>' -docstring 'ctags search'
+map global goto s '<esc>: diff-jump<ret>' -docstring 'diff jump'
 map global user c ': comment-line<ret>' -docstring 'comment line'
 
 # Run git show-diff when openning or saving a file

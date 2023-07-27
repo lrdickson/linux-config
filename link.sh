@@ -21,9 +21,6 @@ link gitconfig .gitconfig
 mkdir -p $HOME/.gnupg/
 link gpg-agent.conf .gnupg/gpg-agent.conf
 
-# inputrc
-link inputrc .inputrc
-
 # ssh
 mkdir -p $HOME/.ssh/
 for i in $(find ssh -type f); do
@@ -46,3 +43,10 @@ done
 for i in $(find config -type f); do
 	link $i ".$i"
 done
+
+# bash config
+# bashsource="if [ -f $HOME/.config/bash/config.sh ]; then source $HOME/.config/bash/config.sh; fi"
+# if ! grep -q "$bashsource" $HOME/.bashrc
+# then
+#     echo $bashsource >> $HOME/.bashrc
+# fi
