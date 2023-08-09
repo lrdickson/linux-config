@@ -16,6 +16,7 @@ fi
 
 # gitconfig
 link gitconfig .gitconfig
+link ./oh-my-posh.nu .oh-my-posh.nu
 
 # gpg
 mkdir -p $HOME/.gnupg/
