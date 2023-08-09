@@ -542,4 +542,8 @@ let-env config = {
   ]
 }
 
-source ~/.oh-my-posh.nu
+if ( which oh-my-posh | length ) > 0 {
+  source ~/.oh-my-posh.nu
+}
+
+source ~/.config/nushell/extra.nu

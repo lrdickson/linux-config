@@ -16,7 +16,10 @@ fi
 
 # gitconfig
 link gitconfig .gitconfig
+
+# nu
 link ./oh-my-posh.nu .oh-my-posh.nu
+touch ~/.config/nushell/extra.nu
 
 # gpg
 mkdir -p $HOME/.gnupg/
