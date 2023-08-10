@@ -554,3 +554,8 @@ source ~/.config/nushell/extra.nu
 
 # touch ~/.cache/carapace/init.nu
 # source ~/.cache/carapace/init.nu
+
+# Sort lines of a string increasing order.
+def sort-str [] {
+  each { |it| $it | split row "\n" | sort | str join "\n" }
+}
