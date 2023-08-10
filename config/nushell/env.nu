@@ -90,5 +90,5 @@ let-env NU_PLUGIN_DIRS = [
 # My changes started here
 #=================================================================
 
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+# mkdir ~/.cache/carapace
+# carapace _carapace nushell | save --force ~/.cache/carapace/init.nu

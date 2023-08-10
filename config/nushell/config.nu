@@ -175,9 +175,9 @@ let light_theme = {
 }
 
 # External completer example
-# let carapace_completer = {|spans|
-#     carapace $spans.0 nushell $spans | from json
-# }
+let carapace_completer = {|spans|
+    carapace $spans.0 nushell $spans | from json
+}
 
 
 # The default config record. This is where much of your global configuration is setup.
@@ -546,11 +546,11 @@ let-env config = {
 # My changes started here
 #=================================================================
 
-if ( which oh-my-posh | length ) > 0 {
-  source ~/.oh-my-posh.nu
-}
+touch ~/.oh-my-posh.nu
+source ~/.oh-my-posh.nu
 
+touch ~/.config/nushell/extra.nu
 source ~/.config/nushell/extra.nu
 
-touch ~/.cache/carapace/init.nu
-source ~/.cache/carapace/init.nu
+# touch ~/.cache/carapace/init.nu
+# source ~/.cache/carapace/init.nu
