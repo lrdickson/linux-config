@@ -18,8 +18,10 @@ fi
 link gitconfig .gitconfig
 
 # nu
-link ./oh-my-posh.nu .oh-my-posh.nu
 touch ~/.config/nushell/extra.nu
+if ( which oh-my-posh > /dev/null ); then
+    oh-my-posh init nu --config oh-my-posh.json
+fi
 
 # gpg
 mkdir -p $HOME/.gnupg/
