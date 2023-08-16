@@ -23,6 +23,12 @@ if ( which oh-my-posh > /dev/null ); then
     oh-my-posh init nu --config oh-my-posh.json
 fi
 
+# fish
+mkdir -p ~/.config/fish/completions
+carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
+rm ~/.config/fish/completions/scp.fish
+rm ~/.config/fish/completions/ssh.fish
+
 # gpg
 mkdir -p $HOME/.gnupg/
 link gpg-agent.conf .gnupg/gpg-agent.conf

@@ -30,6 +30,19 @@ plug "kak-lsp/kak-lsp" %{
     cargo install --locked --force --path .
 }
 
+# eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with plug.kak.
+# set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+# lsp-enable
+# map global normal <c-r> ': lsp-disable;lsp-enable<ret>'
+# map global user l %{:enter-user-mode lsp<ret>} -docstring "LSP mode"
+# map global insert <tab> '<a-;>:try lsp-snippets-select-next-placeholders catch %{ execute-keys -with-hooks <lt>tab> }<ret>' -docstring 'Select next snippet placeholder'
+# map global object a '<a-semicolon>lsp-object<ret>' -docstring 'LSP any symbol'
+# map global object <a-a> '<a-semicolon>lsp-object<ret>' -docstring 'LSP any symbol'
+# map global object e '<a-semicolon>lsp-object Function Method<ret>' -docstring 'LSP function or method'
+# map global object k '<a-semicolon>lsp-object Class Interface Struct<ret>' -docstring 'LSP class interface or struct'
+# map global object d '<a-semicolon>lsp-diagnostic-object --include-warnings<ret>' -docstring 'LSP errors and warnings'
+# map global object D '<a-semicolon>lsp-diagnostic-object<ret>' -docstring 'LSP errors'
+
 plug 'jordan-yee/kakoune-git-mode' %{
     # Set structured commit message options here
     # set-option global git_mode_use_structured_quick_commit true
@@ -56,7 +69,7 @@ map global user c ': comment-line<ret>' -docstring 'comment line'
 
 # Run git show-diff when openning or saving a file
 hook global BufWritePost .* %{ git show-diff }
-hook global BufOpenFile .* %{ git show-diff }
+hook global BufCreate .* %{ git show-diff }
 
 # Theme
 # colorscheme kaleidoscope-dark
@@ -88,7 +101,18 @@ complete-command -menu split command
 alias global vs vsplit
 map global user v ': vsplit<ret>' -docstring 'vertical split'
 
-# Add spelling mode
+# Go specific
+hook global WinSetOption filetype=go %{
+    define-command gofmt -docstring '
+    Run gofmt on the file associated with the current buffer.' \
+    %{
+        echo %sh{ gofmt -w $kak_buffile }
+    }
+    # map global user f ':echo %sh{ gofmt -w $kak_buffile; goimports -w $kak_buffile }<ret>' -docstring 'Go Format'
+}
+hook global BufWritePost .*\.go %{ echo %sh{ gofmt -w $kak_buffile; goimports -w $kak_buffile } }
+
+# Add spell mode
 declare-user-mode spell
 map global user s ': enter-user-mode spell<ret>' -docstring 'spell'
 map global user S ': enter-user-mode -lock spell<ret>' -docstring 'spell (lock)'
