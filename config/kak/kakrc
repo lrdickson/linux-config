@@ -30,6 +30,7 @@ plug "kak-lsp/kak-lsp" %{
     cargo install --locked --force --path .
 }
 
+# Uncomment this section to debug kak-lsp
 # eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with plug.kak.
 # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 # lsp-enable
