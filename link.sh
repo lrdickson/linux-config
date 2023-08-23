@@ -24,10 +24,12 @@ if ( which oh-my-posh > /dev/null ); then
 fi
 
 # fish
-mkdir -p ~/.config/fish/completions
-carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
-rm ~/.config/fish/completions/scp.fish
-rm ~/.config/fish/completions/ssh.fish
+if which carapace &> /dev/null ; then
+    mkdir -p ~/.config/fish/completions
+    carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
+    rm ~/.config/fish/completions/scp.fish
+    rm ~/.config/fish/completions/ssh.fish
+fi
 
 # gpg
 mkdir -p $HOME/.gnupg/

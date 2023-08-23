@@ -35,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Start the VirtualBox client to allow screen scaling
-exec --no-startup-id VBoxClient -fv --vmsvga
+# exec --no-startup-id VBoxClient -fv --vmsvga
 
 # Turn off focus follow mouse
 focus_follows_mouse no
@@ -52,7 +52,8 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+# This is not supported in i3 version 4.20
+# tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
@@ -197,3 +198,6 @@ bar {
 
         status_command i3status
 }
+
+# Include the i3/conf.d/ directory
+include ~/.config/i3/conf.d/*.conf
