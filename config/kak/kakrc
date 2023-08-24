@@ -90,17 +90,20 @@ complete-command -menu split command
 alias global sp split
 map global user h ': split<ret>' -docstring 'horizontal split'
 
-# Vertical split command
-# Note: this splits in the same direction as vim split
-define-command vsplit -params .. -docstring '
-vsplit [<commands>]: split the current tmux window vertically and create a new Kakoune client
-The optional arguments are passed as commands to the new client' \
-%{
-    tmux-terminal-vertical kak -c %val{session} -e "buffer %val{buffile}; exec %val{cursor_line}g; %arg{@}"
+# tmux specific configuration
+hook global ModuleLoaded tmux %{
+    # Vertical split command
+    # Note: this splits in the same direction as vim split
+    define-command vsplit -params .. -docstring '
+    vsplit [<commands>]: split the current tmux window vertically and create a new Kakoune client
+    The optional arguments are passed as commands to the new client' \
+    %{
+        tmux-terminal-vertical kak -c %val{session} -e "buffer %val{buffile}; exec %val{cursor_line}g; %arg{@}"
+    }
+    complete-command -menu split command
+    alias global vs vsplit
+    map global user v ': vsplit<ret>' -docstring 'vertical split'
 }
-complete-command -menu split command
-alias global vs vsplit
-map global user v ': vsplit<ret>' -docstring 'vertical split'
 
 # Go specific
 hook global WinSetOption filetype=go %{
@@ -115,6 +118,7 @@ hook global BufWritePost .*\.go %{ echo %sh{ gofmt -w $kak_buffile; goimports -w
 
 # Options for when the X11 module loads
 hook global ModuleLoaded x11 %{
+    # Set my own priority for terminal commands
     set global termcmd %sh{
         for termcmd in \
                        'sakura         -x      ' \
