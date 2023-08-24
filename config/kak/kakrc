@@ -113,6 +113,32 @@ hook global WinSetOption filetype=go %{
 }
 hook global BufWritePost .*\.go %{ echo %sh{ gofmt -w $kak_buffile; goimports -w $kak_buffile } }
 
+# Options for when the X11 module loads
+hook global ModuleLoaded x11 %{
+    set global termcmd %sh{
+        for termcmd in \
+                       'sakura         -x      ' \
+                       'alacritty      -e sh -c' \
+                       'kitty             sh -c' \
+                       'termite        -e      ' \
+                       'urxvt          -e sh -c' \
+                       'rxvt           -e sh -c' \
+                       'st             -e sh -c' \
+                       'xterm          -e sh -c' \
+                       'roxterm        -e sh -c' \
+                       'mintty         -e sh -c' \
+                       'gnome-terminal -e      ' \
+                       'xfce4-terminal -x sh -c' \
+                       'konsole        -e      '; do
+            terminal=${termcmd%% *}
+            if command -v $terminal >/dev/null 2>&1; then
+                printf %s\\n "$termcmd"
+                exit
+            fi
+        done
+    }
+}
+
 # Add spell mode
 declare-user-mode spell
 map global user s ': enter-user-mode spell<ret>' -docstring 'spell'

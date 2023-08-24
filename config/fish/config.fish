@@ -1,40 +1,42 @@
-# turn on vi keybindings
-fish_vi_key_bindings
-
 # load .fishrc if it exists
 if test -e ~/.fishrc
 	. ~/.fishrc
 end
 
-# Fix terminal colors
-# set -x TERM xterm-256color
+if status is-interactive
+    # turn on vi keybindings
+    fish_vi_key_bindings
 
-# Make NNN easier to read
-set -x NNN_COLORS 6666
+    # Fix terminal colors
+    # set -x TERM xterm-256color
 
-# Start FZF keybindings
-fzf_key_bindings
+    # Make NNN easier to read
+    set -x NNN_COLORS 6666
 
-# set the default editor
-if type -q kak
-	set -x EDITOR kak
-else if type -q nvim
-	set -x EDITOR nvim
-else if type -q vim
-	set -x EDITOR vim
-else if type -q vi
-	set -x EDITOR vi
+    # Start FZF keybindings
+    fzf_key_bindings
+
+    # set the default editor
+    if type -q kak
+    	set -x EDITOR kak
+    else if type -q nvim
+    	set -x EDITOR nvim
+    else if type -q vim
+    	set -x EDITOR vim
+    else if type -q vi
+    	set -x EDITOR vi
+    end
+
+    # set the display variable for wsl2
+    switch (cat /proc/version)
+    case "*WSL2*"
+    	set -x HOST_IP (cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+    	set -x DISPLAY "$HOST_IP:0"
+    end
+
+    # have tmux display 256color
+    alias tmux="tmux -2"
+
+    # Carapace completions
+    carapace _carapace | source
 end
-
-# set the display variable for wsl2
-switch (cat /proc/version)
-case "*WSL2*"
-	set -x HOST_IP (cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
-	set -x DISPLAY "$HOST_IP:0"
-end
-
-# have tmux display 256color
-alias tmux="tmux -2"
-
-# Carapace completions
-carapace _carapace | source
