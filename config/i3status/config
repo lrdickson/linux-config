@@ -32,7 +32,7 @@ wireless _first_ {
 # }
 
 battery all {
-        format = "B: %status %percentage %remaining"
+        format = "%status %percentage %remaining"
 }
 
 # disk "/" {
