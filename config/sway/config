@@ -27,6 +27,9 @@ focus_follows_mouse no
 exec dbus-sway-environment
 exec configure-gtk
 
+# Allow root to run GUI applications
+exec xhost + local:
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
@@ -97,10 +100,13 @@ exec swayidle -w
     bindsym XF86MonBrightnessDown exec light -U 10
     bindsym XF86MonBrightnessUp exec light -A 10
 
-    # # Volume
+    # Volume
     bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
     bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
     bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
+
+    # Lock
+    bindsym $mod+Shift+s exec 'swaylock -f -e -c 000000'
 #
 # Moving around:
 #
