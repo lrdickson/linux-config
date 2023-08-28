@@ -39,4 +39,8 @@ if status is-interactive
 
     # Carapace completions
     carapace _carapace | source
+
+    # Extra path
+    fish_add_path ~/go/bin/
+    fish_add_path ~/.cargo/bin/
 end
