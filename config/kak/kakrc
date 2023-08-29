@@ -103,15 +103,20 @@ hook global ModuleLoaded tmux %{
     complete-command -menu split command
     alias global vs vsplit
     map global user v ': vsplit<ret>' -docstring 'vertical split'
+
+    # Update system clipboard when yanking to the defaul register
+    hook global RegisterModified '"' %{ nop %sh{
+        tmux set-buffer -- "$kak_main_reg_dquote"
+    }}
 }
 
 # Go specific
 hook global WinSetOption filetype=go %{
-    define-command gofmt -docstring '
-    Run gofmt on the file associated with the current buffer.' \
-    %{
-        echo %sh{ gofmt -w $kak_buffile }
-    }
+    # define-command gofmt -docstring '
+    # Run gofmt on the file associated with the current buffer.' \
+    # %{
+    #     echo %sh{ gofmt -w $kak_buffile }
+    # }
     # map global user f ':echo %sh{ gofmt -w $kak_buffile; goimports -w $kak_buffile }<ret>' -docstring 'Go Format'
 }
 hook global BufWritePost .*\.go %{ echo %sh{ gofmt -w $kak_buffile; goimports -w $kak_buffile } }
@@ -141,6 +146,19 @@ hook global ModuleLoaded x11 %{
             fi
         done
     }
+
+    # Update system clipboard when yanking to the default register
+    hook global RegisterModified '"' %{ nop %sh{
+        printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+    }}
+}
+
+# Options for when the wayland module loads
+hook global ModuleLoaded wayland %{
+    # Update system clipboard when yanking to the default register
+    hook global RegisterModified '"' %{ nop %sh{
+        printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+    }}
 }
 
 # Add spell mode
