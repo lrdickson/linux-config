@@ -123,29 +123,34 @@ hook global BufWritePost .*\.go %{ echo %sh{ gofmt -w $kak_buffile; goimports -w
 
 # Options for when the X11 module loads
 hook global ModuleLoaded x11 %{
-    # Set my own priority for terminal commands
-    set global termcmd %sh{
-        for termcmd in \
-                       'sakura         -x      ' \
-                       'alacritty      -e sh -c' \
-                       'kitty             sh -c' \
-                       'termite        -e      ' \
-                       'urxvt          -e sh -c' \
-                       'rxvt           -e sh -c' \
-                       'st             -e sh -c' \
-                       'xterm          -e sh -c' \
-                       'roxterm        -e sh -c' \
-                       'mintty         -e sh -c' \
-                       'gnome-terminal -e      ' \
-                       'xfce4-terminal -x sh -c' \
-                       'konsole        -e      '; do
-            terminal=${termcmd%% *}
-            if command -v $terminal >/dev/null 2>&1; then
-                printf %s\\n "$termcmd"
-                exit
-            fi
-        done
+    define-command set-termcmd -docstring '
+    set-termcmd: set the termcmd option based on available shells' \
+    %{
+        # Set my own priority for terminal commands
+        set global termcmd %sh{
+            for termcmd in \
+                           "alacritty msg create-window --working-directory $PWD -e sh -c" \
+                           'sakura         -x      ' \
+                           'kitty             sh -c' \
+                           'termite        -e      ' \
+                           'urxvt          -e sh -c' \
+                           'rxvt           -e sh -c' \
+                           'st             -e sh -c' \
+                           'xterm          -e sh -c' \
+                           'roxterm        -e sh -c' \
+                           'mintty         -e sh -c' \
+                           'gnome-terminal -e      ' \
+                           'xfce4-terminal -x sh -c' \
+                           'konsole        -e      '; do
+                terminal=${termcmd%% *}
+                if command -v $terminal >/dev/null 2>&1; then
+                    printf %s\\n "$termcmd"
+                    exit
+                fi
+            done
+        }
     }
+    set-termcmd
 
     # Update system clipboard when yanking to the default register
     hook global RegisterModified '"' %{ nop %sh{
