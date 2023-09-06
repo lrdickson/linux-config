@@ -50,6 +50,9 @@ for i in $(find vim -type f); do
 	link $i ".config/n$i"
 done
 
+# make sure that start-alacritty.sh is executable
+chmod +x ./config/start-alacritty.sh
+
 # Link everything in the config directory
 for i in $(find config -type d); do
 	mkdir -p "$HOME/.$i"
