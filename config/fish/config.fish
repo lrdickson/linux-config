@@ -11,7 +11,7 @@ if status is-interactive
 	fzf_key_bindings
 
 	# Carapace completions
-	carapace _carapace | source
+	carapace _carapace | sed 's/.*\<git).*//' | source
 end
 
 # set the default editor
@@ -42,3 +42,4 @@ set -x NNN_COLORS 6666
 fish_add_path ~/go/bin/
 fish_add_path ~/.cargo/bin/
 fish_add_path ~/node_modules/.bin/
+

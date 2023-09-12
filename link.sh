@@ -29,6 +29,7 @@ if which carapace &> /dev/null ; then
     carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
     rm ~/.config/fish/completions/scp.fish
     rm ~/.config/fish/completions/ssh.fish
+    rm ~/.config/fish/completions/git.fish
 fi
 
 # gpg
