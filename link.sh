@@ -9,7 +9,7 @@ link() {
 }
 
 # Links to perform when not using nixos
-if [[ $(cat /proc/version) != *"NixOS"* ]]; then
+if ! cat /proc/version | grep -q "NixOS" ; then
 	# tmux
 	link tmux.conf .tmux.conf
 fi
@@ -19,12 +19,12 @@ link gitconfig .gitconfig
 
 # nu
 touch ~/.config/nushell/extra.nu
-if ( which oh-my-posh > /dev/null ); then
+if which oh-my-posh > /dev/null 2>&1 ; then
     oh-my-posh init nu --config oh-my-posh.json
 fi
 
 # fish
-if which carapace &> /dev/null ; then
+if which carapace > /dev/null 2>&1 ; then
     mkdir -p ~/.config/fish/completions
     carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
     rm ~/.config/fish/completions/scp.fish
@@ -60,6 +60,13 @@ for i in $(find config -type d); do
 done
 for i in $(find config -type f); do
 	link $i ".$i"
+done
+
+# link everything in the bin directory
+mkdir -p ~/.local/bin
+for i in $(find bin -type f); do
+	chmod +x $i
+	link $i ".local/$i"
 done
 
 # bash config

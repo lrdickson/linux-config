@@ -39,7 +39,8 @@ alias tmux="tmux -2"
 set -x NNN_COLORS 6666
 
 # Extra path
-fish_add_path ~/go/bin/
-fish_add_path ~/.cargo/bin/
-fish_add_path ~/node_modules/.bin/
+fish_add_path ~/go/bin
+fish_add_path ~/.cargo/bin
+fish_add_path ~/node_modules/.bin
+fish_add_path ~/.local/bin
 
