@@ -11,7 +11,10 @@ if status is-interactive
 	fzf_key_bindings
 
 	# Carapace completions
-	carapace _carapace | sed 's/.*\<git).*//' | source
+	# carapace_exclusions=["git" "scp" "ssh"]
+	# $carapace_script="(carapace _carapace)"
+	# for e in $carapace_exclusions
+	carapace _carapace | sed 's/.*\<git\>.*//' | sed 's/.*\<scp\>.*//' | source
 end
 
 # set the default editor
