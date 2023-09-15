@@ -14,9 +14,6 @@ if ! cat /proc/version | grep -q "NixOS" ; then
 	link tmux.conf .tmux.conf
 fi
 
-# gitconfig
-link gitconfig .gitconfig
-
 # nu
 touch ~/.config/nushell/extra.nu
 if which oh-my-posh > /dev/null 2>&1 ; then
