@@ -14,7 +14,9 @@ if status is-interactive
 	# carapace_exclusions=["git" "scp" "ssh"]
 	# $carapace_script="(carapace _carapace)"
 	# for e in $carapace_exclusions
-	carapace _carapace | sed 's/.*\<git\>.*//' | sed 's/.*\<scp\>.*//' | source
+	if type -q carapace
+		carapace _carapace | sed 's/.*\<git\>.*//' | sed 's/.*\<scp\>.*//' | source
+	end
 end
 
 # set the default editor
