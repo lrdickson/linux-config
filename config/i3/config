@@ -57,8 +57,8 @@ focus_follows_mouse no
 
 # Green text
 client.focused            #58427c #520060 #50ff00 #2e9ef4   #520060
-client.focused_inactive   #400040 #796878 #a0ff50 #484e50   #5f676a
-client.unfocused          #400040 #222222 #30c000 #292d2e   #222222
+client.focused_inactive   #500050 #796878 #a0ff50 #484e50   #5f676a
+client.unfocused          #500050 #222222 #30c000 #292d2e   #222222
 client.placeholder        #000000 #0c000c #ff00ff #000000   #0c000c
 
 # Use pactl to adjust volume in PulseAudio.
@@ -237,9 +237,10 @@ bar {
                 # binding_mode       #2f343a #900000 #ffffff
                 # Custom
                 statusline           #e6e6fa
+                separator            #008800
                 focused_workspace    #58427c #520060 #50ff00
-                active_workspace     #400040 #796878 #a0ff50
-                inactive_workspace   #400040 #222222 #30c000
+                active_workspace     #500050 #796878 #a0ff50
+                inactive_workspace   #500050 #222222 #30c000
         }
 }
 
