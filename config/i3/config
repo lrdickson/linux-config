@@ -230,8 +230,8 @@ bar {
                 # Custom
                 statusline           #e6e6fa
                 focused_workspace    #58427c #522d60 #e6e6fa
-                active_workspace     #2c213e #796878 #e6e6fa
-                inactive_workspace   #2c213e #222222 #915c83
+                active_workspace     #400040 #796878 #e6e6fa
+                inactive_workspace   #400040 #222222 #b000b0
         }
 }
 
