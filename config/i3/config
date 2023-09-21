@@ -50,8 +50,8 @@ focus_follows_mouse no
 # client.background       #ffffff
 # custom
 client.focused            #58427c #522d60 #e6e6fa #2e9ef4   #522d60
-client.focused_inactive   #2c213e #796878 #e6e6fa #484e50   #5f676a
-client.unfocused          #2c213e #222222 #915c83 #292d2e   #222222
+client.focused_inactive   #400040 #796878 #e6e6fa #484e50   #5f676a
+client.unfocused          #400040 #222222 #b000b0 #292d2e   #222222
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
