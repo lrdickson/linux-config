@@ -48,10 +48,17 @@ focus_follows_mouse no
 # client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # client.background       #ffffff
+
 # custom
-client.focused            #58427c #522d60 #e6e6fa #2e9ef4   #522d60
-client.focused_inactive   #400040 #796878 #e6e6fa #484e50   #5f676a
-client.unfocused          #400040 #222222 #c000d0 #292d2e   #222222
+# Purple text
+# client.focused          #58427c #522d60 #e6e6fa #2e9ef4   #522d60
+# client.focused_inactive #400040 #796878 #e6e6fa #484e50   #5f676a
+# client.unfocused        #400040 #222222 #c000d0 #292d2e   #222222
+
+# Green text
+client.focused            #58427c #520060 #50ff00 #2e9ef4   #520060
+client.focused_inactive   #400040 #796878 #a0ff50 #484e50   #5f676a
+client.unfocused          #400040 #222222 #30c000 #292d2e   #222222
 client.placeholder        #000000 #0c000c #ff00ff #000000   #0c000c
 
 # Use pactl to adjust volume in PulseAudio.
@@ -230,9 +237,9 @@ bar {
                 # binding_mode       #2f343a #900000 #ffffff
                 # Custom
                 statusline           #e6e6fa
-                focused_workspace    #58427c #522d60 #e6e6fa
-                active_workspace     #400040 #796878 #e6e6fa
-                inactive_workspace   #400040 #222222 #c000d0
+                focused_workspace    #58427c #520060 #50ff00
+                active_workspace     #400040 #796878 #a0ff50
+                inactive_workspace   #400040 #222222 #30c000
         }
 }
 
