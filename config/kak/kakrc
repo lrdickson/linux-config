@@ -74,7 +74,7 @@ hook global BufCreate .* %{ git show-diff }
 
 # Theme
 # colorscheme kaleidoscope-dark
-colorscheme gruvbox-dark
+colorscheme gruvbox-dark-alacritty
 set-option global ui_options terminal_assistant=cat
 
 # Split command opens a new window to the current buffer and line number

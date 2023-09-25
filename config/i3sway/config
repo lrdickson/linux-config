@@ -29,7 +29,8 @@ focus_follows_mouse no
 # Green text
 client.focused            #58427c #520060 #50ff00 #2e9ef4   #520060
 client.focused_inactive   #500050 #796878 #a0ff50 #484e50   #5f676a
-client.unfocused          #500050 #222222 #30c000 #292d2e   #222222
+# Match the background with alacritty default
+client.unfocused          #500050 #1d1f21 #30c000 #292d2e   #222222
 client.placeholder        #000000 #0c000c #ff00ff #000000   #0c000c
 
 ### Key bindings
