@@ -12,12 +12,15 @@ evaluate-commands %sh{
 
     # Use the background color from the default alacritty theme
     bg="rgb:1d1f21"
+    bg_alpha="rgba:1d1f21a0"
+    bg1="rgb:1d1f21"
+    bg2="rgb:1d1f21"
 
     # Other background colors come from gruvbox-dark
     # bg="rgb:282828"
-    bg_alpha="rgba:282828a0"
-    bg1="rgb:3c3836"
-    bg2="rgb:504945"
+    # bg_alpha="rgba:282828a0"
+    # bg1="rgb:3c3836"
+    # bg2="rgb:504945"
     bg3="rgb:665c54"
     bg4="rgb:7c6f64"
 
