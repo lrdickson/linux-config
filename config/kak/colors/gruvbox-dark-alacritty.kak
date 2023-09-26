@@ -56,6 +56,10 @@ evaluate-commands %sh{
         face global bullet    ${yellow}
         face global list      ${fg}
 
+	# Assistant
+        face global Information        ${fg},${bg}
+        face global Error              ${red},${bg}
+
         face global Default            ${fg},${bg}
         face global PrimarySelection   ${fg_alpha},${blue}+g
         face global SecondarySelection ${bg_alpha},${blue}+g
@@ -69,8 +73,6 @@ evaluate-commands %sh{
         face global MenuForeground     ${bg2},${blue}
         face global MenuBackground     ${fg},${bg2}
         face global MenuInfo           ${bg}
-        face global Information        ${bg},${fg}
-        face global Error              ${bg},${red}
         face global DiagnosticError    ${red}
         face global DiagnosticWarning  ${yellow}
         face global StatusLine         ${fg},${bg}
