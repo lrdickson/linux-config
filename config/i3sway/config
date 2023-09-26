@@ -31,10 +31,8 @@ client.focused_inactive   #796878 #796878 #a0ff50 #484e50   #1d1f21
 client.unfocused          #1d1f21 #1d1f21 #30c000 #292d2e   #1d1f21
 client.placeholder        #000000 #0c000c #ff00ff #000000   #0c000c
 
-hide_edge_borders both
-
 # No title bars
-default_border none
+default_border pixel
 
 ### Key bindings
 #
