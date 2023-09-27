@@ -11,14 +11,6 @@
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:monospace 9
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -114,7 +106,10 @@ bindsym $mod+r mode "resize"
 include ~/.config/i3/conf.d/*.conf
 include ~/.conifg/i3sway/config
 
+############
 # It appears that the include directive is not doing anything in i3 version 4.20.1 so this is a copy of i3sway config
+############
+
 # Common config for i3 and sway
 
 ### Variables
@@ -124,7 +119,11 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 9
+# font pango:monospace 10
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono 10
 
 # Your preferred terminal emulator
 set $term ~/.local/bin/start-alacritty
@@ -132,24 +131,31 @@ set $term ~/.local/bin/start-alacritty
 # Turn off focus follow mouse
 focus_follows_mouse no
 
-# class                   border  backgr. text    indicator child_border
-# default
-# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-# client.urgent           #2f343a #900000 #ffffff #900000   #900000
-# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-# client.background       #ffffff
+### Theme
+#
 
-# Match the background with alacritty default
-client.focused            #1d1f21 #1d1f21 #00ff00 #2e9ef4   #600060
-client.focused_inactive   #1d1f21 #1d1f21 #00ff00 #484e50   #1d1f21
-client.unfocused          #1d1f21 #1d1f21 #928374 #292d2e   #1d1f21
+    # class                   border  backgr. text    indicator child_border
+    # default
+    # client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+    # client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+    # client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+    # client.urgent           #2f343a #900000 #ffffff #900000   #900000
+    # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+    # client.background       #ffffff
 
-hide_edge_borders smart
+    # Match the background with alacritty default
+    client.focused            #1d1f21 #1d1f21 #00ff00 #2e9ef4   #600060
+    client.focused_inactive   #1d1f21 #1d1f21 #00ff00 #484e50   #1d1f21
+    client.unfocused          #1d1f21 #1d1f21 #928374 #292d2e   #1d1f21
 
-# No title bars
-default_border pixel
+    # Only show borders when there are multiple windows in a workspace
+    hide_edge_borders smart
+
+    # Only show parent title bars for nested windows
+    default_border pixel
+
+    # Turn on window icons
+    for_window [all] title_window_icon on
 
 ### Key bindings
 #
@@ -273,7 +279,7 @@ bar {
         background           #1d1f21
         separator            #008800
         focused_workspace    #1d1f21 #1d1f21 #00ff00
-        active_workspace     #1d1f21 #1d1f21 #00ff00
+        active_workspace     #1d1f21 #1d1f21 #ffff00
         inactive_workspace   #1d1f21 #1d1f21 #928374
     }
 }
