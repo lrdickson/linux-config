@@ -27,9 +27,8 @@ focus_follows_mouse no
 
 # Match the background with alacritty default
 client.focused            #1d1f21 #1d1f21 #00ff00 #2e9ef4   #600060
-client.focused_inactive   #1d1f21 #1d1f21 #ffff00 #484e50   #1d1f21
+client.focused_inactive   #1d1f21 #1d1f21 #00ff00 #484e50   #1d1f21
 client.unfocused          #1d1f21 #1d1f21 #928374 #292d2e   #1d1f21
-client.placeholder        #000000 #0c000c #ff00ff #000000   #0c000c
 
 hide_edge_borders smart
 
