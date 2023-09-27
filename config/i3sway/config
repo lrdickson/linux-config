@@ -157,7 +157,7 @@ bar {
         background           #1d1f21
         separator            #008800
         focused_workspace    #1d1f21 #1d1f21 #00ff00
-        active_workspace     #1d1f21 #1d1f21 #ffff00
+        active_workspace     #1d1f21 #1d1f21 #00ff00
         inactive_workspace   #1d1f21 #1d1f21 #928374
     }
 }
