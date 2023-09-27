@@ -26,9 +26,9 @@ focus_follows_mouse no
 # client.background       #ffffff
 
 # Match the background with alacritty default
-client.focused            #520060 #520060 #50ff00 #2e9ef4   #520060
-client.focused_inactive   #796878 #796878 #a0ff50 #484e50   #1d1f21
-client.unfocused          #1d1f21 #1d1f21 #30c000 #292d2e   #1d1f21
+client.focused            #1d1f21 #1d1f21 #00ff00 #2e9ef4   #600060
+client.focused_inactive   #1d1f21 #1d1f21 #ffff00 #484e50   #1d1f21
+client.unfocused          #1d1f21 #1d1f21 #928374 #292d2e   #1d1f21
 client.placeholder        #000000 #0c000c #ff00ff #000000   #0c000c
 
 hide_edge_borders smart
@@ -155,12 +155,11 @@ bar {
         # urgent_workspace   #2f343a #900000 #ffffff
         # binding_mode       #2f343a #900000 #ffffff
         # Custom
-        statusline           #e6e6fa
         background           #1d1f21
         separator            #008800
-        focused_workspace    #520060 #520060 #50ff00
-        active_workspace     #796878 #796878 #a0ff50
-        inactive_workspace   #1d1f21 #1d1f21 #30c000
+        focused_workspace    #1d1f21 #1d1f21 #00ff00
+        active_workspace     #1d1f21 #1d1f21 #ffff00
+        inactive_workspace   #1d1f21 #1d1f21 #928374
     }
 }
 
