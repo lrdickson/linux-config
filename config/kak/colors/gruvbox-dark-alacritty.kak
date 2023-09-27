@@ -1,7 +1,7 @@
 # gruvbox-dark theme
 
 evaluate-commands %sh{
-    gray="rgb:928374"
+    gray="rgb:a09080"
     red="rgb:fb4934"
     green="rgb:b8bb26"
     yellow="rgb:fabd2f"
@@ -11,10 +11,10 @@ evaluate-commands %sh{
     orange="rgb:fe8019"
 
     # Use the background color from the default alacritty theme
-    bg="rgb:1d1f21"
-    bg_alpha="rgba:1d1f21a0"
-    bg1="rgb:1d1f21"
-    bg2="rgb:1d1f21"
+    bg="rgb:220022"
+    bg_alpha="rgba:220022a0"
+    bg1="rgb:220022"
+    bg2="rgb:220022"
 
     # Other background colors come from gruvbox-dark
     # bg="rgb:282828"
