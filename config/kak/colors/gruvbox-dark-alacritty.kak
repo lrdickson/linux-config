@@ -14,6 +14,7 @@ evaluate-commands %sh{
     bg="rgb:220022"
     bg_alpha="rgba:220022a0"
     bg2="rgb:220022"
+    bg2o="rgb:504945"
     # bg4="rgb:00cc99"
 
     # Other background colors come from gruvbox-dark
@@ -66,7 +67,7 @@ evaluate-commands %sh{
         face global PrimaryCursor      ${bg},${fg}+fg
         face global SecondaryCursor    ${bg},${bg4}+fg
         face global PrimaryCursorEol   ${bg},${fg4}+fg
-        face global SecondaryCursorEol ${bg},${bg2}+fg
+        face global SecondaryCursorEol ${bg},${bg2o}+fg
         face global LineNumbers        ${bg4}
         face global LineNumberCursor   ${yellow},${bg1}
         face global LineNumbersWrapped ${bg1}
