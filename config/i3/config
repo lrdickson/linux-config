@@ -102,6 +102,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Turn on window icons
+for_window [all] title_window_icon on
+
 # Include the i3/conf.d/ directory
 include ~/.config/i3/conf.d/*.conf
 include ~/.conifg/i3sway/config
@@ -144,18 +147,15 @@ focus_follows_mouse no
     # client.background       #ffffff
 
     # Match the background with alacritty default
-    client.focused            #220022 #220022 #00ff00 #2e9ef4   #600060
-    client.focused_inactive   #220022 #220022 #00ff00 #484e50   #220022
-    client.unfocused          #220022 #220022 #cc00cc #292d2e   #220022
+    client.focused            #000088 #220022 #00ff00 #2e9ef4   #000088
+    client.focused_inactive   #000088 #220022 #00ff00 #484e50   #220022
+    client.unfocused          #660066 #220022 #cc00cc #292d2e   #220022
 
     # Only show borders when there are multiple windows in a workspace
     hide_edge_borders smart
 
     # Only show parent title bars for nested windows
     default_border pixel
-
-    # Turn on window icons
-    for_window [all] title_window_icon on
 
 ### Key bindings
 #
