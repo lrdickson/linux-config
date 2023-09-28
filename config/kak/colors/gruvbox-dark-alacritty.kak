@@ -14,6 +14,7 @@ evaluate-commands %sh{
     bg="rgb:220022"
     bg_alpha="rgba:220022a0"
     bg2="rgb:220022"
+    # bg4="rgb:00cc99"
 
     # Other background colors come from gruvbox-dark
     # bg="rgb:282828"
