@@ -57,7 +57,7 @@ evaluate-commands %sh{
 
 	# Assistant
         face global Information        ${fg},${bg}
-        face global Error              ${red},${bg}
+        face global Error              ${bg},${red}
 
         face global Default            ${fg},${bg}
         face global PrimarySelection   ${fg_alpha},${blue}+g

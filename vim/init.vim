@@ -43,7 +43,7 @@ else
 	colorscheme atom
 endif
 
-" Show trailing whitepace and spaces before a tab:
+" Show trailing whitespace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 syntax on
