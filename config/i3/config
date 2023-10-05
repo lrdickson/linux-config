@@ -148,14 +148,14 @@ focus_follows_mouse no
 
     # Match the background with alacritty default
     client.focused            #004499 #220022 #00ff00 #2e9ef4   #004499
-    client.focused_inactive   #004499 #220022 #00ff00 #484e50   #220022
+    client.focused_inactive   #004499 #220022 #0066bb #484e50   #220022
     client.unfocused          #880088 #220022 #cc00cc #292d2e   #220022
 
     # Only show borders when there are multiple windows in a workspace
     hide_edge_borders smart
 
     # Only show parent title bars for nested windows
-    default_border pixel 1
+    default_border normal 1
 
 ### Key bindings
 #
@@ -279,7 +279,7 @@ bar {
         background           #220022
         separator            #008800
         focused_workspace    #220022 #220022 #00ff00
-        active_workspace     #220022 #220022 #ffff00
+        active_workspace     #220022 #220022 #0066bb
         inactive_workspace   #220022 #220022 #cc00cc
     }
 }
