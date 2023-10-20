@@ -176,6 +176,9 @@ map global spell r ': spell-replace<ret>' -docstring 'suggest replacement for se
 map global spell a ': spell-add<ret>' -docstring 'add selected word to the dictionary'
 map global spell q ': spell-clear<ret>' -docstring 'turn off spell checking'
 
+# Show matching character
+add-highlighter global/ show-matching
+
 # Softwrap long lines
 add-highlighter global/ wrap -word -indent
 
