@@ -33,8 +33,8 @@ focus_follows_mouse no
     # client.background       #ffffff
 
     # Match the background with alacritty default
-    client.focused            #004499 #220022 #00ff00 #2e9ef4   #004499
-    client.focused_inactive   #004499 #220022 #0066bb #484e50   #220022
+    client.focused            #0066aa #220022 #00ff00 #2e9ef4   #220022
+    client.focused_inactive   #0066aa #220022 #00aaff #484e50   #220022
     client.unfocused          #880088 #220022 #cc00cc #292d2e   #220022
 
     # Only show borders when there are multiple windows in a workspace
@@ -165,7 +165,7 @@ bar {
         background           #220022
         separator            #008800
         focused_workspace    #220022 #220022 #00ff00
-        active_workspace     #220022 #220022 #0066bb
+        active_workspace     #220022 #220022 #00aaff
         inactive_workspace   #220022 #220022 #cc00cc
     }
 }
