@@ -29,6 +29,10 @@ exec --no-startup-id nm-applet
 # Start the VirtualBox client to allow screen scaling
 # exec --no-startup-id VBoxClient -fv --vmsvga
 
+# Brightness
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
