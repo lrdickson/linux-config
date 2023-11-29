@@ -1,0 +1,8 @@
+
+[language-server.ltex-ls]
+command = "ltex-ls"
+
+[[language]]
+name = "markdown"
+file-types = [ "md" ]
+language-servers = [ "marksman", "ltex-ls" ]
