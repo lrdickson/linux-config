@@ -1,5 +1,9 @@
 
-theme = "base16_transparent"
+theme = "mytheme"
 
 [editor.file-picker]
 hidden = false
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
