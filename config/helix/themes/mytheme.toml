@@ -1,8 +1,10 @@
 inherits = "base16_transparent"
 
 "ui.selection" = { bg = "background2" }
+"ui.selection.primary" = { bg = "background3" }
 "ui.statusline" = { bg = "background2" }
 
 [palette]
 
 background2 = "#550055"
+background3 = "#880088"
