@@ -121,6 +121,12 @@ hook global WinSetOption filetype=go %{
 }
 hook global BufWritePost .*\.go %{ echo %sh{ gofmt -w $kak_buffile; goimports -w $kak_buffile } }
 
+# Dart
+hook global WinSetOption filetype=go %{
+    set buffer indentwidth 2
+    set buffer tabstop 2
+}
+
 # Options for when the X11 module loads
 hook global ModuleLoaded x11 %{
     define-command set-termcmd -docstring '
