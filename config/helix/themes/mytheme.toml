@@ -1,22 +1,8 @@
-inherits = "base16_default"
+inherits = "base16_transparent"
 
-
-"ui.gutter" = { bg = "background", fg = "foreground" }
-"ui.linenr" = { bg = "background" }
-"ui.menu" = { bg = "background", fg = "foreground" }
-"ui.popup" = { bg = "background", fg = "foreground" }
-"ui.popup.info" = { bg = "background", fg = "foreground" }
-"ui.statusline" = { bg = "background2", fg = "foreground" }
-"ui.statusline.inactive" = { bg = "background" }
-"ui.text" = { bg = "background", fg = "foreground" }
-# "ui.text.info" = { bg = "background", fg = "foreground" }
-"ui.virtual.whitespace" = { fg = "gray" }
-"ui.window" = { bg = "background", fg = "foreground" }
+"ui.selection" = { bg = "background2" }
+"ui.statusline" = { bg = "background2" }
 
 [palette]
 
-foreground = "#ebdbb2"
-
-background = "#220022"
 background2 = "#550055"
-background3 = "#880088"
