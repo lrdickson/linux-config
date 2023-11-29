@@ -1,8 +1,22 @@
 
 theme = "mytheme"
 
+[editor]
+# Highlight all lines with cursors
+cursorline = true
+true-color = true
+
 [editor.file-picker]
 hidden = false
+
+[editor.indent-guides]
+render=true
+
+[editor.lsp]
+display-messages = true
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name"]
 
 [editor.whitespace.render]
 space = "all"
