@@ -56,6 +56,11 @@ for i in $(find config -type f); do
 	link $i ".$i"
 done
 
+# zoxide
+# if which zoxide > /dev/null 2>&1 ; then
+# 	zoxide init nushell > ~/.config/nushell/zoxide.nu
+# fi
+
 # link everything in the bin directory
 mkdir -p ~/.local/bin
 for i in $(find bin -type f); do

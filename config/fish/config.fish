@@ -49,3 +49,6 @@ fish_add_path ~/.cargo/bin
 fish_add_path ~/node_modules/.bin
 fish_add_path ~/.local/bin
 
+if type -q zoxide 
+	zoxide init fish | source
+end
