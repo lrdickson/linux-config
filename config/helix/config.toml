@@ -18,6 +18,9 @@ display-messages = true
 [editor.statusline]
 left = ["mode", "spinner", "version-control", "file-name"]
 
+[editor.soft-wrap]
+enable = true
+
 [editor.whitespace.render]
-space = "all"
+# space = "all"
 tab = "all"
