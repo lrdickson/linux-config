@@ -10,7 +10,7 @@ true-color = true
 hidden = false
 
 [editor.indent-guides]
-render=true
+# render=true
 
 [editor.lsp]
 display-messages = true
