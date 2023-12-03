@@ -29,7 +29,7 @@ def fast_git [] {
             }
         })
         let state_str = ($state_list | str join)
-        $' [($BRANCH_STYLE)($info.name.0)(ansi reset)($state_str)(ansi reset)]'
+        $' ($BRANCH_STYLE)[($info.name.0)(ansi reset)($state_str)($BRANCH_STYLE)](ansi reset)'
     }
 }
 
