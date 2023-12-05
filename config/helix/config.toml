@@ -16,7 +16,12 @@ hidden = false
 display-messages = true
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control", "file-name"]
+left = [
+  "mode",
+  "spinner",
+  "version-control",
+  "file-name",
+  "file-modification-indicator"]
 
 [editor.soft-wrap]
 enable = true
