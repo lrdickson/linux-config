@@ -196,11 +196,119 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
+# Colors (Terminal.app)
 colors:
   # Default colors
   primary:
-    background: '#220022'
+    # background: '0x000000'
+    background: '0x220022'
+    foreground: '0xb6b6b6'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x990000'
+    green:   '0x00a600'
+    yellow:  '0x999900'
+    blue:    '0x0000b2'
+    magenta: '0xb200b2'
+    cyan:    '0x00a6b2'
+    white:   '0xbfbfbf'
+
+  # Bright colors
+  bright:
+    black:   '0x666666'
+    red:     '0xe50000'
+    green:   '0x00d900'
+    yellow:  '0xe5e500'
+    # blue:    '0x0000ff'
+    blue:    '0x4444ff'
+    magenta: '0xe500e5'
+    cyan:    '0x00e5e5'
+    white:   '0xe5e5e5'
+
+# XTerm's default colors
+# colors:
+#   # Default colors
+#   primary:
+#     # background: '0x000000'
+#     background: '0x220022'
+#     foreground: '0xffffff'
+#   # Normal colors
+#   normal:
+#     black:   '0x000000'
+#     red:     '0xcd0000'
+#     green:   '0x00cd00'
+#     yellow:  '0xcdcd00'
+#     blue:    '0x0000ee'
+#     magenta: '0xcd00cd'
+#     cyan:    '0x00cdcd'
+#     white:   '0xe5e5e5'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x7f7f7f'
+#     red:     '0xff0000'
+#     green:   '0x00ff00'
+#     yellow:  '0xffff00'
+#     blue:    '0x5c5cff'
+#     magenta: '0xff00ff'
+#     cyan:    '0x00ffff'
+#     white:   '0xffffff'
+
+# Colors (KDE Breeze)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x220022'
+#     # background: '0x232627'
+#     foreground: '0xfcfcfc'
+
+#     dim_foreground: '0xeff0f1'
+#     bright_foreground: '0xffffff'
+#     dim_background: '0x31363b'
+#     bright_background: '0x000000'
+
+#   # Normal colors
+#   normal:
+#     black: '0x232627'
+#     red: '0xed1515'
+#     green: '0x11d116'
+#     yellow: '0xf67400'
+#     blue: '0x1d99f3'
+#     # magenta: '0x9b59b6'
+#     magenta: '0xbb59d6'
+#     cyan: '0x1abc9c'
+#     white: '0xfcfcfc'
+
+#   # Bright colors
+#   bright:
+#     black: '0x7f8c8d'
+#     red: '0xc0392b'
+#     green: '0x1cdc9a'
+#     yellow: '0xfdbc4b'
+#     blue: '0x3daee9'
+#     # magenta: '0x8e44ad'
+#     magenta: '0xcb69e6'
+#     cyan: '0x16a085'
+#     white: '0xffffff'
+
+#   # Dim colors
+#   dim:
+#     black: '0x31363b'
+#     red: '0x783228'
+#     green: '0x17a262'
+#     yellow: '0xb65619'
+#     blue: '0x1b668f'
+#     magenta: '0x614a73'
+#     cyan: '0x186c60'
+#     white: '0x63686d'
+
+# Colors (Tomorrow Night)
+#colors:
+  # Default colors
+  #primary:
+  #  background: '#1d1f21'
   #  foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
@@ -394,9 +502,9 @@ colors:
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+cursor:
   # Cursor style
-  #style:
+  style:
     # Cursor shape
     #
     # Values for `shape`:
@@ -412,7 +520,7 @@ colors:
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-    #blinking: Off
+    blinking: On
 
   # Vi mode cursor style
   #

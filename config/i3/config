@@ -137,7 +137,8 @@ font pango:DejaVu Sans Mono 10
 
 # Your preferred terminal emulator
 # set $term ~/.local/bin/start-alacritty
-set $term wezterm
+set $term alacritty
+# set $term wezterm
 
 # Turn off focus follow mouse
 focus_follows_mouse no
