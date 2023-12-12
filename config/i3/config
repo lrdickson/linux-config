@@ -137,8 +137,9 @@ font pango:DejaVu Sans Mono 10
 
 # Your preferred terminal emulator
 # set $term ~/.local/bin/start-alacritty
-set $term alacritty
+# set $term alacritty
 # set $term wezterm
+set $term xfce4-terminal
 
 # Turn off focus follow mouse
 focus_follows_mouse no
