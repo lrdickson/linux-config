@@ -3,11 +3,15 @@ inherits = "snazzy"
 # "diagnostic.error" = { underine = { color = "background1" }}
 
 "ui.background" = { bg = "background1" }
-"ui.popup" = { bg = "background2" }
-"ui.statusline" = { bg = "background2" }
+"ui.cursorline.primary" = { bg = "background2p" }
+"ui.cursorline.secondary" = { bg = "background2s" }
+"ui.popup" = { bg = "background2s" }
+"ui.menu" = { bg = "background2s"}
+"ui.statusline" = { bg = "background2s" }
 "ui.statusline.inactive" = { bg = "background1" }
 
 [palette]
 
 background1 = "#220022"
-background2 = "#440044"
+background2p = "#440066"
+background2s = "#440044"
