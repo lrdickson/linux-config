@@ -32,5 +32,5 @@ ScrollingBar=TERMINAL_SCROLLBAR_NONE
 TitleMode=TERMINAL_TITLE_REPLACE
 ColorBackground=#222200002222
 FontName=Monospace 11
-ColorPalette=rgb(0,0,0);rgb(204,0,0);rgb(0,170,0);rgb(170,85,0);rgb(0,0,170);rgb(170,0,170);rgb(0,204,204);rgb(170,170,170);rgb(85,85,85);rgb(255,85,85);rgb(85,255,85);rgb(255,255,85);rgb(85,85,255);rgb(255,85,255);rgb(85,255,255);rgb(255,255,255)
+ColorPalette=rgb(0,0,0);rgb(204,0,0);rgb(0,170,0);rgb(170,85,0);rgb(51,85,221);rgb(170,0,170);rgb(0,204,204);rgb(170,170,170);rgb(85,85,85);rgb(255,85,85);rgb(85,255,85);rgb(255,255,85);rgb(85,85,255);rgb(255,85,255);rgb(85,255,255);rgb(255,255,255)
 
