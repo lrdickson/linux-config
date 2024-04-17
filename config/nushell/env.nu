@@ -2,6 +2,37 @@
 #
 # version = "0.92.1"
 
+let BRANCH_STYLE = $'(ansi white_bold)'
+let AHEAD_STYLE = $'(ansi green)(char branch_ahead)'
+let BEHIND_STYLE = $'(ansi yellow_bold)(char branch_behind)'
+
+def fast_git [] {
+    let b_info = (do -p { git --no-optional-locks branch -v } | str trim)
+    if ($b_info | is-empty) {
+        ''
+    } else {
+        let info = ($b_info | parse -r '\* (?<name>(\([\S ]+\))|([\w\/\-\.]+)) +\w+ (\[((?<state>[^\]]+))+\])?')
+        let state_list = ($info.state.0 | split row ', ' | each { |it|
+            let p = ($it | parse "{s} {n}")
+            if ($p | is-empty) {
+                if ($it | str starts-with "gone") {
+                    $' (ansi light_red)(char failed)'
+                } else {
+                    ''
+                }
+            } else if $p.s.0 == 'ahead' {
+                $' ($AHEAD_STYLE)($p.n.0)(ansi reset)'
+            } else if $p.s.0 == 'behind' {
+                $' ($BEHIND_STYLE)($p.n.0)'
+            } else {
+                $' (ansi red)($p.s.0) ($p.n.0)'
+            }
+        })
+        let state_str = ($state_list | str join)
+        $' ($BRANCH_STYLE)[($info.name.0)(ansi reset)($state_str)($BRANCH_STYLE)](ansi reset)'
+    }
+}
+
 def create_left_prompt [] {
     let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
@@ -13,7 +44,8 @@ def create_left_prompt [] {
     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
     let path_segment = $"($path_color)($dir)"
 
-    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+    let path = ($path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)")
+    [$path, (fast_git)] | str join
 }
 
 def create_right_prompt [] {
