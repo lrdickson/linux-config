@@ -872,3 +872,7 @@ $env.config = {
 }
 
 source ~/.config/nushell/zoxide.nu
+
+def get-coredump [dump_path: path] {
+    coredumpctl | detect columns | coredumpctl dump ($in | last | get PID) | save -f $dump_path
+}
