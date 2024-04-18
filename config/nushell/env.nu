@@ -7,7 +7,7 @@ let AHEAD_STYLE = $'(ansi green)(char branch_ahead)'
 let BEHIND_STYLE = $'(ansi yellow_bold)(char branch_behind)'
 
 def fast_git [] {
-    let b_info = (do -p { git --no-optional-locks branch -v } | str trim)
+    let b_info = (do -p { git --no-optional-locks branch -v } | complete | get stdout | str trim)
     if ($b_info | is-empty) {
         ''
     } else {
