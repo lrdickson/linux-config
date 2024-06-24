@@ -1,6 +1,6 @@
 # Nushell Environment Config File
 #
-# version = "0.92.1"
+# version = "0.94.1"
 
 let BRANCH_STYLE = $'(ansi white_bold)'
 let AHEAD_STYLE = $'(ansi green)(char branch_ahead)'
