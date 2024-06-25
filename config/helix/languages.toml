@@ -4,5 +4,19 @@ command = "ltex-ls"
 
 [[language]]
 name = "markdown"
-file-types = [ "md" ]
+# file-types = [ "md" ]
 language-servers = [ "marksman", "ltex-ls" ]
+
+[language-server.erg-lsp]
+command = "erg"
+args = ["server"]
+
+[[language]]
+name = "erg"
+scope = "source.erg"
+file-types = ["er"]
+shebangs = ["erg"]
+comment-tokens = "#"
+block-comment-tokens = { start = "'''", end = "'''" }
+indent = { tab-width = 4, unit = "    " }
+language-servers = [ "erg-lsp" ]
