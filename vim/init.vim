@@ -7,9 +7,9 @@ call plug#begin('~/.config/vim-plug')
 
 Plug 'dense-analysis/ale'
 Plug 'rafi/awesome-vim-colorschemes'
-if executable("node")
-       Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
+" if executable("node")
+"       Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" endif
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 if has('nvim-0.4.4')
@@ -37,11 +37,11 @@ call plug#end()
 let g:instant_username = "lyn"
 
 " Set the colorscheme
-if has('nvim-0.4')
-	colorscheme deus
-else
-	colorscheme atom
-endif
+" if has('nvim-0.4')
+" 	colorscheme deus
+" else
+" 	colorscheme atom
+" endif
 
 " Show trailing whitespace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
@@ -104,9 +104,9 @@ endfunction
 
 
 " Initialize coc
-if executable("node")
-	call SourceIfExists("~/.vim/init_coc.vim")
-endif
+" if executable("node")
+" 	call SourceIfExists("~/.vim/init_coc.vim")
+" endif
 
 " ======================= Autoformat ======================================
 nnoremap <silent> <C-k> :Autoformat<CR>
