@@ -134,4 +134,4 @@ $env.NU_PLUGIN_DIRS = [
 use std "path add"
 path add /nix/var/nix/profiles/default/bin
 
-$env.EDITOR = hx
+$env.EDITOR = "hx"
