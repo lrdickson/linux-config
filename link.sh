@@ -40,8 +40,7 @@ for i in $(find ssh -type f); do
 done
 
 # vim
-mkdir -p $HOME/.vim/ftplugin $HOME/.vim/autoload
-mkdir -p $HOME/.config/nvim/ftplugin $HOME/.config/nvim/autoload
+mkdir -p $HOME/.vim/ftplugin $HOME/.config/nvim/ftplugin
 link vim/init.vim .vimrc
 for i in $(find vim -type f); do
 	link $i ".$i"
