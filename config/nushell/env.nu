@@ -135,4 +135,4 @@ use std "path add"
 path add /nix/var/nix/profiles/default/bin
 path add ~/node_modules/.bin
 
-$env.EDITOR = hx
+$env.EDITOR = "hx"
