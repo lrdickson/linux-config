@@ -12,6 +12,17 @@ inherits = "snazzy"
 
 [palette]
 
-background1 = "#220022"
+# Purple mode
+background1  = "#220022"
 background2p = "#440066"
 background2s = "#440044"
+
+# Green mode
+# background1  = "#003300"
+# background2p = "#008800"
+# background2s = "#006600"
+
+# Blue mode
+# background1  = "#000033"
+# background2p = "#000088"
+# background2s = "#000066"

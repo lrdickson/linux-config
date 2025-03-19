@@ -2,6 +2,9 @@
 " Color Scheme
 colorscheme industry
 
+" Turn on line numbers
+set number
+
 " Show trailing whitespace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
