@@ -54,23 +54,19 @@ def create_left_prompt [] {
     ] | str join | str replace --regex --all "([-:])" $"(ansi green)${1}(ansi magenta)" |
         str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
 
-    [$time_segment, " ", $path, (fast_git)] | str join
-}
-
-def create_right_prompt [] {
     let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
+        (char space)
         (ansi rb)
         ($env.LAST_EXIT_CODE)
     ] | str join)
     } else { "" }
 
-    $last_exit_code
+    [$time_segment, " ", $path, (fast_git), $last_exit_code] | str join
 }
 
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
-# FIXME: This default is not implemented in rust code as of 2023-09-08.
-$env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
+$env.PROMPT_COMMAND_RIGHT = {||}
 
 use std "path add"
 path add /nix/var/nix/profiles/default/bin
