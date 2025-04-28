@@ -71,6 +71,7 @@ $env.PROMPT_COMMAND_RIGHT = {||}
 use std "path add"
 path add /nix/var/nix/profiles/default/bin
 path add ~/node_modules/.bin
+path add ~/.local/bin
 
 $env.EDITOR = "hx"
 

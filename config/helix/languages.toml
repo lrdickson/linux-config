@@ -1,10 +1,13 @@
 
+[language-server.typos-lsp]
+command = "typos-lsp"
+
 [language-server.ltex-ls]
 command = "ltex-ls"
 
 [[language]]
 name = "markdown"
-# file-types = [ "md" ]
+# adding ltex-ls for spell checking
 language-servers = [ "marksman", "ltex-ls" ]
 
 [language-server.erg-lsp]
@@ -20,3 +23,19 @@ comment-tokens = "#"
 block-comment-tokens = { start = "'''", end = "'''" }
 indent = { tab-width = 4, unit = "    " }
 language-servers = [ "erg-lsp" ]
+
+[[language]]
+name = "c"
+# Adding typos-lsp language server for spell checking
+language-servers = [ "clangd", "typos-lsp" ]
+
+[[language]]
+name = "cpp"
+# Adding typos-lsp language server for spell checking
+language-servers = [ "clangd", "typos-lsp" ]
+
+[[language]]
+name = "xml"
+# Adding typos-lsp language server for spell checking
+language-servers = [ "typos-lsp" ]
+
