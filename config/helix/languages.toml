@@ -1,4 +1,8 @@
 
+[language-server.tabby]
+command = "npx"
+args = ["tabby-agent", "--lsp", "--stdio"]
+
 [language-server.typos-lsp]
 command = "typos-lsp"
 
@@ -27,15 +31,20 @@ language-servers = [ "erg-lsp" ]
 [[language]]
 name = "c"
 # Adding typos-lsp language server for spell checking
-language-servers = [ "clangd", "typos-lsp" ]
+language-servers = [ "clangd", "typos-lsp", "tabby" ]
 
 [[language]]
 name = "cpp"
 # Adding typos-lsp language server for spell checking
-language-servers = [ "clangd", "typos-lsp" ]
+language-servers = [ "clangd", "typos-lsp", "tabby" ]
 
 [[language]]
 name = "xml"
 # Adding typos-lsp language server for spell checking
 language-servers = [ "typos-lsp" ]
+
+[[language]]
+name = "python"
+# Adding typos-lsp language server for spell checking
+language-servers = [ "ruff", "jedi-language-server", "pylsp", "typos-lsp", "tabby" ]
 
