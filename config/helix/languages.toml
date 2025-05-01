@@ -1,18 +1,46 @@
 
+# ltex language server also works with markdown and includes spell checking
+[language-server.ltex-ls]
+command = "ltex-ls"
+
+# AI coding assistant
 [language-server.tabby]
 command = "npx"
 args = ["tabby-agent", "--lsp", "--stdio"]
 
+# Adding typos-lsp language server for spell checking
 [language-server.typos-lsp]
 command = "typos-lsp"
 
-[language-server.ltex-ls]
-command = "ltex-ls"
+[[language]]
+name = "c"
+language-servers = [ "clangd", "typos-lsp", "tabby" ]
+
+[[language]]
+name = "cpp"
+language-servers = [ "clangd", "typos-lsp", "tabby" ]
+
+[[language]]
+name = "jinja"
+language-servers = [ "typos-lsp" ]
 
 [[language]]
 name = "markdown"
-# adding ltex-ls for spell checking
 language-servers = [ "marksman", "ltex-ls" ]
+
+[[language]]
+name = "python"
+language-servers = [ "ruff", "jedi-language-server", "pylsp", "typos-lsp", "tabby" ]
+
+[[language]]
+name = "toml"
+language-servers = [ "taplo", "typos-lsp" ]
+
+[[language]]
+name = "xml"
+language-servers = [ "typos-lsp" ]
+
+#================ Experimental =============#
 
 [language-server.erg-lsp]
 command = "erg"
@@ -27,24 +55,4 @@ comment-tokens = "#"
 block-comment-tokens = { start = "'''", end = "'''" }
 indent = { tab-width = 4, unit = "    " }
 language-servers = [ "erg-lsp" ]
-
-[[language]]
-name = "c"
-# Adding typos-lsp language server for spell checking
-language-servers = [ "clangd", "typos-lsp", "tabby" ]
-
-[[language]]
-name = "cpp"
-# Adding typos-lsp language server for spell checking
-language-servers = [ "clangd", "typos-lsp", "tabby" ]
-
-[[language]]
-name = "xml"
-# Adding typos-lsp language server for spell checking
-language-servers = [ "typos-lsp" ]
-
-[[language]]
-name = "python"
-# Adding typos-lsp language server for spell checking
-language-servers = [ "ruff", "jedi-language-server", "pylsp", "typos-lsp", "tabby" ]
 
