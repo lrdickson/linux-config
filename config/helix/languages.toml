@@ -13,6 +13,10 @@ args = ["tabby-agent", "--lsp", "--stdio"]
 command = "typos-lsp"
 
 [[language]]
+name = "bash"
+language-servers = [ "bash-language-server", "typos-lsp" ]
+
+[[language]]
 name = "c"
 language-servers = [ "clangd", "typos-lsp", "tabby" ]
 
