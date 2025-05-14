@@ -1,0 +1,13 @@
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+	trustExitCode = true
+	# keepBackup = false
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = false
+	trustExitCode = true
+	# keepBackup = false
+	# keepTemporaries = false

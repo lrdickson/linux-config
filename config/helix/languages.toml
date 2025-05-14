@@ -60,3 +60,30 @@ block-comment-tokens = { start = "'''", end = "'''" }
 indent = { tab-width = 4, unit = "    " }
 language-servers = [ "erg-lsp" ]
 
+[language-server.roc-ls]
+command = "roc_language_server"
+
+[[language]]
+name = "roc"
+scope = "source.roc"
+injection-regex = "roc"
+file-types = ["roc"]
+shebangs = ["roc"]
+roots = []
+comment-token = "#"
+language-servers = ["roc-ls"]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
+formatter = { command = "roc", args =[ "format", "--stdin", "--stdout"]}
+
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+[[grammar]]
+
+name = "roc"
+source = { git = "https://github.com/faldor20/tree-sitter-roc.git", rev = "0b1afe88161cbd81f5ddea1bb4fa786314ed49a7" }
+
