@@ -68,6 +68,7 @@ done
 
 # bash config
 bashsource="if [ -f $HOME/.config/bash/config.sh ]; then source $HOME/.config/bash/config.sh; fi"
+# The -F on grep does a simple text search
 if ! grep -qF "$bashsource" $HOME/.bashrc; then
 	echo >>$HOME/.bashrc
 	echo $bashsource >>$HOME/.bashrc
