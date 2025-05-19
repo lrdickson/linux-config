@@ -28,5 +28,5 @@ blinking = "On"
 [font]
 size = 10.0
 
-[shell]
+[terminal.shell]
 program = "nu"
