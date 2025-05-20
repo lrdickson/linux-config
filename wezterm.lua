@@ -24,5 +24,20 @@ config.colors = {
 
 config.hide_tab_bar_if_only_one_tab = true
 
+-- Keybindings
+config.keys = {
+  -- Rebind ToggleFullScreen to CTRL+ALT+Enter
+  {
+    key = 'Enter',
+    mods = 'ALT',
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
+    key = 'Enter',
+    mods = 'CTRL|ALT',
+    action = wezterm.action.ToggleFullScreen,
+  },
+}
+
 -- Finally, return the configuration to wezterm:
 return config
