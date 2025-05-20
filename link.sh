@@ -46,6 +46,9 @@ for i in $(find vim -type f); do
 	link $i ".config/n$i"
 done
 
+# wezterm
+link wezterm.lua .wezterm.lua
+
 # Link everything in the config directory
 for i in $(find config -type d); do
 	mkdir -p "$HOME/.$i"
@@ -64,6 +67,12 @@ mkdir -p ~/.local/bin
 for i in $(find bin -type f); do
 	chmod +x $i
 	link $i ".local/$(echo $i | sed 's/\.sh//')"
+done
+
+# link everything in the bin directory
+mkdir -p ~/.local/share/applications
+for i in $(find applications -type f); do
+	link $i ".local/share/"
 done
 
 # bash config
