@@ -1,4 +1,5 @@
 
+# ===================== lsp-ai ======================#
 [language-server.lsp-ai]
 command = "lsp-ai"
 
@@ -75,6 +76,8 @@ content = "def is_even(n):\n    return n % 2 == 0"
 role = "user"
 content = "{CODE}"
 
+
+# ============================ Other language servers =============================#
 # ltex language server also works with markdown and includes spell checking
 [language-server.ltex-ls]
 command = "ltex-ls"
@@ -92,6 +95,8 @@ args = ["tabby-agent", "--lsp", "--stdio"]
 [language-server.typos-lsp]
 command = "typos-lsp"
 
+
+# ============================ Languages =============================#
 [[language]]
 name = "bash"
 language-servers = [ "bash-language-server", "typos-lsp" ]
@@ -127,6 +132,7 @@ language-servers = [ "taplo", "typos-lsp" ]
 [[language]]
 name = "xml"
 language-servers = [ "typos-lsp" ]
+
 
 #================ Experimental =============#
 
