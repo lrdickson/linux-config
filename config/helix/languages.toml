@@ -9,6 +9,16 @@ file_store = { }
 type = "ollama"
 model = "qwen2.5-coder"
 
+[[language-server.lsp-ai.config.chat]]
+trigger = "!C"
+action_display_name = "Chat"
+model = "model1"
+
+[language-server.lsp-ai.config.chat.parameters]
+max_context = 8192
+# max_tokens = 1024
+system = "You are a code assistant chatbot. The user will ask you for assistance coding and you will do you best to answer succinctly and accurately"
+
 [language-server.lsp-ai.config.completion]
 model = "model1"
 
