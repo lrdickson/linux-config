@@ -49,6 +49,9 @@ done
 # wezterm
 link wezterm.lua .wezterm.lua
 
+# codex
+link codex .codex
+
 # Link everything in the config directory
 for i in $(find config -type d); do
 	mkdir -p "$HOME/.$i"
