@@ -1,12 +1,14 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
-    unbind "Ctrl n"
-    unbind "Ctrl o"
+    unbind "Ctrl n" // Former bind for resize
+    unbind "Ctrl o" // Former bind for session
+    unbind "Ctrl p" // Former bind for panes
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
-        unbind "Ctrl o"
-        bind "Ctrl x" { SwitchToMode "Session"; }
+        unbind "Ctrl n" // Former bind for resize
+        unbind "Ctrl o" // Former bind for session
+        unbind "Ctrl p" // Former bind for panes
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -25,7 +27,8 @@ keybinds {
         bind "-" { Resize "Decrease"; }
     }
     pane {
-        bind "Ctrl p" { SwitchToMode "Normal"; }
+        unbind "Ctrl p" // Former bind for panes
+        bind "Ctrl a" { SwitchToMode "Normal"; }
         bind "h" "Left" { MoveFocus "Left"; }
         bind "l" "Right" { MoveFocus "Right"; }
         bind "j" "Down" { MoveFocus "Down"; }
@@ -191,16 +194,18 @@ keybinds {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-        bind "Ctrl p" { SwitchToMode "Pane"; }
+        unbind "Ctrl p" // Former bind for panes
+        bind "Ctrl a" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
+        unbind "Ctrl n" // Former bind for resize
         bind "Ctrl e" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
     }
     shared_except "session" "locked" {
-        unbind "Ctrl o"
+        unbind "Ctrl o" // Former bind for session
         bind "Ctrl x" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {

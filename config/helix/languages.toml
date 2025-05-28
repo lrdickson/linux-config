@@ -79,6 +79,10 @@ content = "{CODE}"
 [language-server.ltex-ls]
 command = "ltex-ls"
 
+# Markdown personal knowledge management system as a LSP
+[language-server.markdown-oxide]
+command = "markdown-oxide"
+
 # AI coding assistant
 [language-server.tabby]
 command = "npx"
@@ -106,7 +110,7 @@ language-servers = [ "typos-lsp" ]
 
 [[language]]
 name = "markdown"
-language-servers = [ "marksman", "ltex-ls" ]
+language-servers = [ "marksman", "ltex-ls", "markdown-oxide" ]
 
 [[language]]
 name = "python"
