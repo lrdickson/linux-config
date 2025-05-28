@@ -31,3 +31,6 @@ enable = true
 [editor.whitespace.render]
 # space = "all"
 tab = "all"
+
+[keys.normal]
+C-j = "save_selection"
