@@ -4,8 +4,9 @@ theme = "mytheme"
 
 [editor]
 # Highlight all lines with cursors
-cursorline = true
-true-color = true
+cursorline  = true
+line-number = "relative"
+true-color  = true
 
 [editor.file-picker]
 hidden = false
