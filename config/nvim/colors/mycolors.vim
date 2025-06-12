@@ -31,7 +31,7 @@ hi SpellCap guifg=NONE guibg=NONE guisp=#87ff00 gui=undercurl ctermfg=NONE cterm
 hi SpellLocal guifg=NONE guibg=NONE guisp=#ffffff gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
 hi SpellRare guifg=NONE guibg=NONE guisp=#ffafff gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
 " hi StatusLine guifg=#0e0024 guibg=#ffffff gui=NONE cterm=NONE
-hi StatusLine guifg=#100020 guibg=#100020 gui=NONE cterm=NONE
+hi StatusLine guifg=#100020 guibg=#300060 gui=NONE cterm=NONE
 " hi StatusLineNC guifg=#0e0024 guibg=#afaab6 gui=NONE cterm=NONE
 hi StatusLineNC guifg=#100020 guibg=#afaab6 gui=NONE cterm=NONE
 " hi Pmenu guifg=#0e0024 guibg=#ffffff gui=NONE cterm=NONE
