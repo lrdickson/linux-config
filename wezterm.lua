@@ -13,10 +13,10 @@ config.default_prog = { 'nu' }
 
 -- Colors
 config.colors = {
-  background = '#220022',
+  background = '#100020',
   tab_bar = {
     active_tab = {
-      bg_color = '#220022',
+      bg_color = '#100020',
       fg_color = '#c0c0c0',
     }
   },

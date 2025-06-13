@@ -5,11 +5,14 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
-        -- Markdown language server
-        marksman = {},
-        -- Latex language server with spell checking that also supports markdown
-        -- The ltex language server seems to break popup windows
-        -- ltex = {},
+        bashls = {},
+        clangd = {},
+        gopls = {},
+        markdown_oxide = {}, -- Markdown PKM
+        marksman = {},       -- Markdown language server
+        nixd = {},
+        pylsp = {},
+        taplo = {}, -- Toml language server
       },
     },
   },
