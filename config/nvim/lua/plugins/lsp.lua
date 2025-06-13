@@ -8,6 +8,7 @@ return {
         bashls = {},
         clangd = {},
         gopls = {},
+        lua_ls = {},
         markdown_oxide = {}, -- Markdown PKM
         marksman = {},       -- Markdown language server
         nixd = {},
