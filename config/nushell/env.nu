@@ -74,5 +74,5 @@ path add ~/node_modules/.bin
 path add ~/.local/bin
 path add ~/.cargo/bin
 
-$env.EDITOR = "hx"
+$env.EDITOR = "nvim"
 
