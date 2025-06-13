@@ -39,5 +39,7 @@ config.keys = {
   },
 }
 
+config.enable_wayland=false
+
 -- Finally, return the configuration to wezterm:
 return config
