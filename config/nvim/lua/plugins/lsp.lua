@@ -10,9 +10,10 @@ return {
         gopls = {},
         lua_ls = {},
         markdown_oxide = {}, -- Markdown PKM
-        marksman = {},       -- Markdown language server
+        marksman = {}, -- Markdown language server
         nixd = {},
         pylsp = {},
+        svelte = {},
         taplo = {}, -- Toml language server
       },
     },

@@ -43,6 +43,17 @@ return {
             model = "mistral",
           },
           slash_commands = generate_slash_commands(),
+          keymaps = {
+            send = {
+              modes = { n = "<C-l>", i = "<C-l>" },
+              opts = {},
+            },
+            close = {
+              modes = { n = "<C-c>", i = "<C-c>" },
+              opts = {},
+            },
+            -- Add further custom keymaps here
+          },
         },
         inline = {
           adapter = {
