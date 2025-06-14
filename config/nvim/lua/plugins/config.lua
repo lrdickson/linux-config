@@ -1,7 +1,12 @@
+enable_mason = true
+if string.find( vim.uv.os_uname().version, "NixOS" ) then
+  enable_mason = false
+end
+
 return {
   -- Disable mason to use system package manager
-  { "williamboman/mason-lspconfig.nvim", enabled = false },
-  { "williamboman/mason.nvim",           enabled = false },
+  { "williamboman/mason-lspconfig.nvim", enabled = enable_mason },
+  { "williamboman/mason.nvim",           enabled = enable_mason },
 
   -- Add fileformat to lualine
   {

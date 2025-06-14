@@ -1,4 +1,4 @@
--- if true then return {} end
+if true then return {} end
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
@@ -8,7 +8,12 @@ return {
     providers = {
       ollama = {
         endpoint = "http://localhost:11434",
-        model = "codellama",
+        -- model = "codellama",
+        -- model = "qwen2.5-coder",
+        -- model = "qwen3",
+        model = "qwen3:4b",
+        -- model = "llama3.1",
+        -- model = "mistral",
       },
     },
   },
