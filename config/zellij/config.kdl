@@ -3,6 +3,7 @@ keybinds {
     unbind "Ctrl n" // Former bind for resize
     unbind "Ctrl o" // Former bind for session
     unbind "Ctrl p" // Former bind for panes
+    unbind "Alt n"  // Former bind for new pane
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
@@ -34,15 +35,15 @@ keybinds {
         bind "j" "Down" { MoveFocus "Down"; }
         bind "k" "Up" { MoveFocus "Up"; }
         bind "p" { SwitchFocus; }
-        bind "n" { NewPane; SwitchToMode "Normal"; }
-        bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
-        bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "c" { NewPane; SwitchToMode "Normal"; }         // Formerly n
+        bind "s" { NewPane "Down"; SwitchToMode "Normal"; }  // Formerly d
+        bind "v" { NewPane "Right"; SwitchToMode "Normal"; } // Formerly r
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
-        bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0;} // Formerly c
         bind "i" { TogglePanePinned; SwitchToMode "Normal"; }
     }
     move {
@@ -59,7 +60,7 @@ keybinds {
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
         bind "l" "Right" "Down" "j" { GoToNextTab; }
-        bind "n" { NewTab; SwitchToMode "Normal"; }
+        bind "c" { NewTab; SwitchToMode "Normal"; } // Formerly n
         bind "x" { CloseTab; SwitchToMode "Normal"; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "Normal"; }
         bind "b" { BreakPane; SwitchToMode "Normal"; }
@@ -175,10 +176,11 @@ keybinds {
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     shared_except "locked" {
+        unbind "Alt n"  // Former bind for new pane
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
         bind "Alt f" { ToggleFloatingPanes; }
-        bind "Alt n" { NewPane; }
+        bind "Alt c" { NewPane; }
         bind "Alt i" { MoveTab "Left"; }
         bind "Alt o" { MoveTab "Right"; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
