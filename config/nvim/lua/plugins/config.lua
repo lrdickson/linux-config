@@ -1,4 +1,4 @@
-enable_mason = true
+local enable_mason = true
 if string.find(vim.uv.os_uname().version, "NixOS") then
   enable_mason = false
 end
@@ -51,6 +51,16 @@ return {
         -- My additions
         "nu",
         "svelte",
+      },
+    },
+  },
+  {
+    "saghen/blink.cmp",
+    opts = {
+      sources = {
+        per_filetype = {
+          codecompanion = { "codecompanion" },
+        },
       },
     },
   },
