@@ -35,17 +35,21 @@ hi StatusLine guifg=#afaab6 guibg=#300060 gui=NONE cterm=NONE
 " hi StatusLineNC guifg=#0e0024 guibg=#afaab6 gui=NONE cterm=NONE
 hi StatusLineNC guifg=#100020 guibg=#afaab6 gui=NONE cterm=NONE
 " hi Pmenu guifg=#0e0024 guibg=#ffffff gui=NONE cterm=NONE
-hi Pmenu guifg=#100020 guibg=#ffffff gui=NONE cterm=NONE
+hi Pmenu guifg=#ffffff guibg=#100020 gui=NONE cterm=NONE
 hi PmenuSbar guifg=#d7d5db guibg=#d7d5db gui=NONE cterm=NONE
 " hi PmenuSel guifg=#0e0024 guibg=#afafff gui=NONE cterm=NONE
-hi PmenuSel guifg=#100020 guibg=#afafff gui=NONE cterm=NONE
+hi PmenuSel guifg=#afafff guibg=#100020 gui=NONE cterm=NONE
 hi PmenuThumb guifg=#878092 guibg=#878092 gui=NONE cterm=NONE
-hi PmenuExtra guifg=#878092 guibg=#ffffff gui=NONE cterm=NONE
+" hi PmenuExtra guifg=#878092 guibg=#ffffff gui=NONE cterm=NONE
+hi PmenuExtra guifg=#ffffff guibg=#878092 gui=NONE cterm=NONE
 hi! link PmenuExtraSel PmenuSel
-hi PmenuKind guifg=#878092 guibg=#ffffff gui=NONE cterm=NONE
+" hi PmenuKind guifg=#878092 guibg=#ffffff gui=NONE cterm=NONE
+hi PmenuKind guifg=#ffffff guibg=#878092 gui=NONE cterm=NONE
 hi! link PmenuKindSel PmenuSel
-hi PmenuMatch guifg=#d700ff guibg=#ffffff gui=NONE cterm=NONE
-hi PmenuMatchSel guifg=#d700ff guibg=#afafff gui=NONE cterm=NONE
+" hi PmenuMatch guifg=#d700ff guibg=#ffffff gui=NONE cterm=NONE
+hi PmenuMatch guifg=#ffffff guibg=#d700ff gui=NONE cterm=NONE
+" hi PmenuMatchSel guifg=#d700ff guibg=#afafff gui=NONE cterm=NONE
+hi PmenuMatchSel guifg=#afafff guibg=#d700ff gui=NONE cterm=NONE
 hi ColorColumn guifg=NONE guibg=#510039 gui=NONE cterm=NONE
 hi CursorLine guifg=NONE guibg=#362b49 gui=NONE cterm=NONE
 hi CursorColumn guifg=NONE guibg=#362b49 gui=NONE cterm=NONE
