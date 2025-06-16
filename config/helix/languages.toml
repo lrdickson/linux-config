@@ -4,7 +4,7 @@
 command = "lsp-ai"
 
 [language-server.lsp-ai.config.memory]
-file_store = { }
+file_store = {}
 
 [language-server.lsp-ai.config.models.model1]
 type = "ollama"
@@ -78,6 +78,11 @@ content = "{CODE}"
 
 
 # ============================ Other language servers =============================#
+
+# ctags language server
+[language-server.ctags-lsp]
+command = "ctags-lsp"
+
 # ltex language server also works with markdown and includes spell checking
 [language-server.ltex-ls]
 command = "ltex-ls"
@@ -99,39 +104,59 @@ command = "typos-lsp"
 # ============================ Languages =============================#
 [[language]]
 name = "bash"
-language-servers = [ "bash-language-server", "typos-lsp" ]
+language-servers = ["bash-language-server", "typos-lsp"]
 
 [[language]]
 name = "c"
-language-servers = [ "clangd", "typos-lsp", "tabby" ]
+# language-servers = [ "clangd", "typos-lsp", "lsp-ai" ]
+language-servers = ["clangd", "typos-lsp", "tabby"]
 
 [[language]]
 name = "cpp"
-language-servers = [ "clangd", "typos-lsp", "tabby" ]
+# language-servers = [ "clangd", "typos-lsp", "lsp-ai" ]
+language-servers = ["clangd", "typos-lsp", "tabby"]
+
+[[language]]
+name = "c-sharp"
+language-servers = ["OmniSharp", "typos-lsp", "ctags-lsp"]
+
+[[language]]
+name = "go"
+language-servers = ["gopls", "golangci-lint-langserver", "typos-lsp", "tabby"]
 
 [[language]]
 name = "jinja"
-language-servers = [ "typos-lsp" ]
+language-servers = ["typos-lsp"]
 
 [[language]]
 name = "markdown"
-language-servers = [ "marksman", "ltex-ls", "markdown-oxide" ]
+language-servers = ["marksman", "ltex-ls", "markdown-oxide"]
+
+[[language]]
+name = "nix"
+language-servers = ["nil", "nixd", "typos-lsp"]
 
 [[language]]
 name = "python"
-language-servers = [ "ruff", "jedi-language-server", "pylsp", "typos-lsp", "tabby" ]
+language-servers = [
+  "ruff",
+  "jedi-language-server",
+  "pylsp",
+  "typos-lsp",
+  "tabby",
+]
 
 [[language]]
 name = "rust"
-language-servers = [ "rust-analyzer", "typos-lsp", "lsp-ai" ]
+language-servers = ["rust-analyzer", "typos-lsp", "lsp-ai"]
 
 [[language]]
 name = "toml"
-language-servers = [ "taplo", "typos-lsp" ]
+language-servers = ["taplo", "typos-lsp"]
 
 [[language]]
 name = "xml"
-language-servers = [ "typos-lsp" ]
+language-servers = ["typos-lsp"]
 
 
 #================ Experimental =============#
@@ -148,7 +173,7 @@ shebangs = ["erg"]
 comment-tokens = "#"
 block-comment-tokens = { start = "'''", end = "'''" }
 indent = { tab-width = 4, unit = "    " }
-language-servers = [ "erg-lsp" ]
+language-servers = ["erg-lsp"]
 
 [language-server.roc-ls]
 command = "roc_language_server"
@@ -164,7 +189,7 @@ comment-token = "#"
 language-servers = ["roc-ls"]
 indent = { tab-width = 2, unit = "  " }
 auto-format = true
-formatter = { command = "roc", args =[ "format", "--stdin", "--stdout"]}
+formatter = { command = "roc", args = ["format", "--stdin", "--stdout"] }
 
 
 [language.auto-pairs]
@@ -176,4 +201,3 @@ formatter = { command = "roc", args =[ "format", "--stdin", "--stdout"]}
 
 name = "roc"
 source = { git = "https://github.com/faldor20/tree-sitter-roc.git", rev = "0b1afe88161cbd81f5ddea1bb4fa786314ed49a7" }
-
