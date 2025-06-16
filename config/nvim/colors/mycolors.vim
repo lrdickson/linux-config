@@ -31,7 +31,7 @@ hi SpellCap guifg=NONE guibg=NONE guisp=#87ff00 gui=undercurl ctermfg=NONE cterm
 hi SpellLocal guifg=NONE guibg=NONE guisp=#ffffff gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
 hi SpellRare guifg=NONE guibg=NONE guisp=#ffafff gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
 " hi StatusLine guifg=#0e0024 guibg=#ffffff gui=NONE cterm=NONE
-hi StatusLine guifg=#100020 guibg=#300060 gui=NONE cterm=NONE
+hi StatusLine guifg=#afaab6 guibg=#300060 gui=NONE cterm=NONE
 " hi StatusLineNC guifg=#0e0024 guibg=#afaab6 gui=NONE cterm=NONE
 hi StatusLineNC guifg=#100020 guibg=#afaab6 gui=NONE cterm=NONE
 " hi Pmenu guifg=#0e0024 guibg=#ffffff gui=NONE cterm=NONE
@@ -137,10 +137,14 @@ hi! link Typedef Type
 hi! link Terminal Normal
 hi! link MessageWindow Pmenu
 hi! link PopupNotification Todo
-hi DiffAdd guifg=#87ff00 guibg=#362b49 gui=reverse cterm=reverse
-hi DiffChange guifg=#afafff guibg=#362b49 gui=reverse cterm=reverse
-hi DiffText guifg=#d7d5db guibg=#362b49 gui=reverse cterm=reverse
-hi DiffDelete guifg=#ff5faf guibg=#362b49 gui=reverse cterm=reverse
+" hi DiffAdd guifg=#87ff00 guibg=#362b49 gui=reverse cterm=reverse
+" hi DiffChange guifg=#afafff guibg=#362b49 gui=reverse cterm=reverse
+" hi DiffText guifg=#d7d5db guibg=#362b49 gui=reverse cterm=reverse
+" hi DiffDelete guifg=#ff5faf guibg=#362b49 gui=reverse cterm=reverse
+hi DiffAdd guifg=#362b49 guibg=#87ff00 gui=reverse cterm=reverse
+hi DiffChange guifg=#362b49 guibg=#afafff gui=reverse cterm=reverse
+hi DiffText guifg=#362b49 guibg=#d7d5db gui=reverse cterm=reverse
+hi DiffDelete guifg=#362b49 guibg=#ff5faf gui=reverse cterm=reverse
 
 if s:t_Co >= 256
 hi Normal ctermfg=231 ctermbg=16 cterm=NONE

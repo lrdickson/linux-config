@@ -19,28 +19,28 @@ return {
     },
     enabled = true,
     opts = {
+      adapters = {
+        ollama = function()
+          return require("codecompanion.adapters").extend("ollama", {
+            env = {
+              url = vim.g["ollama_url"],
+              api_key = "OLLAMA_API_KEY",
+            },
+            headers = {
+              ["Content-Type"] = "application/json",
+              ["Authorization"] = "Bearer ${api_key}",
+            },
+            parameters = {
+              sync = true,
+            },
+          })
+        end,
+      },
       strategies = {
-        adapters = {
-          ollama = function()
-            return require("codecompanion.adapters").extend("ollama", {
-              env = {
-                url = (os.getenv("OLLAMA_URL") or "http://localhost:11434"),
-                api_key = "OLLAMA_API_KEY",
-              },
-              headers = {
-                ["Content-Type"] = "application/json",
-                ["Authorization"] = "Bearer ${api_key}",
-              },
-              parameters = {
-                sync = true,
-              },
-            })
-          end,
-        },
         chat = {
           adapter = {
             name = "ollama",
-            model = "mistral",
+            model = vim.g["ollama_model"],
           },
           slash_commands = generate_slash_commands(),
           keymaps = {
@@ -58,13 +58,13 @@ return {
         inline = {
           adapter = {
             name = "ollama",
-            model = "mistral",
+            model = vim.g["ollama_model"],
           },
         },
         cmd = {
           adapter = {
             name = "ollama",
-            model = "mistral",
+            model = vim.g["ollama_model"],
           },
         },
       },
