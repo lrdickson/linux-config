@@ -38,7 +38,7 @@ hi StatusLineNC guifg=#100020 guibg=#afaab6 gui=NONE cterm=NONE
 hi Pmenu guifg=#ffffff guibg=#100020 gui=NONE cterm=NONE
 hi PmenuSbar guifg=#d7d5db guibg=#d7d5db gui=NONE cterm=NONE
 " hi PmenuSel guifg=#0e0024 guibg=#afafff gui=NONE cterm=NONE
-hi PmenuSel guifg=#afafff guibg=#100020 gui=NONE cterm=NONE
+hi PmenuSel guifg=#100020 guibg=#afafff gui=NONE cterm=NONE
 hi PmenuThumb guifg=#878092 guibg=#878092 gui=NONE cterm=NONE
 " hi PmenuExtra guifg=#878092 guibg=#ffffff gui=NONE cterm=NONE
 hi PmenuExtra guifg=#ffffff guibg=#878092 gui=NONE cterm=NONE
