@@ -30,4 +30,8 @@ return {
       },
     },
   },
+  {
+    "nmac427/guess-indent.nvim",
+    opts = function() require("guess-indent").setup {} end,
+  }
 }
