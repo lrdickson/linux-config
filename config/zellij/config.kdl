@@ -1,12 +1,19 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
-    unbind "Ctrl n" // Former bind for resize
-    unbind "Ctrl o" // Former bind for session
-    unbind "Ctrl p" // Former bind for panes
+    // Alt-n used by neovim next reference
     unbind "Alt n"  // Former bind for new pane
+    // Ctrl-h used by neovim switch window
+    unbind "Ctrl h" // Former bind for move
+    // Ctrl-n used by neovim p-menu
+    unbind "Ctrl n" // Former bind for resize
+    // Ctrl-o used by neovim jumps
+    unbind "Ctrl o" // Former bind for session
+    // Ctrl-p used by neovim p-menu
+    unbind "Ctrl p" // Former bind for panes
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
+        unbind "Ctrl h" // Former bind for move
         unbind "Ctrl n" // Former bind for resize
         unbind "Ctrl o" // Former bind for session
         unbind "Ctrl p" // Former bind for panes
@@ -15,7 +22,8 @@ keybinds {
         bind "Ctrl g" { SwitchToMode "Normal"; }
     }
     resize {
-        bind "Ctrl e" { SwitchToMode "Normal"; }
+        unbind "Ctrl n" // Former bind for resize
+        bind "Ctrl i" { SwitchToMode "Normal"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
@@ -47,7 +55,8 @@ keybinds {
         bind "i" { TogglePanePinned; SwitchToMode "Normal"; }
     }
     move {
-        bind "Ctrl h" { SwitchToMode "Normal"; }
+        unbind "Ctrl h" // Former bind for move
+        bind "Ctrl e" { SwitchToMode "Normal"; }
         bind "n" "Tab" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "h" "Left" { MovePane "Left"; }
@@ -201,7 +210,7 @@ keybinds {
     }
     shared_except "resize" "locked" {
         unbind "Ctrl n" // Former bind for resize
-        bind "Ctrl e" { SwitchToMode "Resize"; }
+        bind "Ctrl i" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
@@ -214,7 +223,8 @@ keybinds {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
+        unbind "Ctrl h" // Former bind for move
+        bind "Ctrl e" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "Ctrl b" { SwitchToMode "Tmux"; }

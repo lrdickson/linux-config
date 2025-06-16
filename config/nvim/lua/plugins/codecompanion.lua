@@ -45,7 +45,7 @@ return {
           slash_commands = generate_slash_commands(),
           keymaps = {
             send = {
-              modes = { n = "<C-l>", i = "<C-l>" },
+              modes = { n = "<M-s>", i = "<M-s>" },
               opts = {},
             },
             close = {
