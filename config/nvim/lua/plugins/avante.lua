@@ -1,4 +1,7 @@
-if true then return {} end
+if true then
+  return {}
+end
+
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
@@ -7,17 +10,12 @@ return {
     provider = "ollama",
     providers = {
       ollama = {
-        endpoint = "http://localhost:11434",
-        -- model = "codellama",
-        -- model = "qwen2.5-coder",
-        -- model = "qwen3",
-        model = "qwen3:4b",
-        -- model = "llama3.1",
-        -- model = "mistral",
+        endpoint = vim.g.ollama_url,
+        model = vim.g.ollama_model,
       },
     },
   },
--- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
@@ -51,7 +49,7 @@ return {
     },
     {
       -- Make sure to set this up properly if you have lazy=true
-      'MeanderingProgrammer/render-markdown.nvim',
+      "MeanderingProgrammer/render-markdown.nvim",
       opts = {
         file_types = { "markdown", "Avante" },
       },

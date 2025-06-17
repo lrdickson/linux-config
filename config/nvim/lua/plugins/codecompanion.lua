@@ -1,3 +1,7 @@
+-- if true then
+--   return {}
+-- end
+
 local function generate_slash_commands()
   local commands = {}
   for _, command in ipairs({ "buffer", "file", "help", "symbols" }) do
