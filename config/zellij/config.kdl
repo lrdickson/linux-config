@@ -128,8 +128,8 @@ keybinds {
         bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
     }
     session {
-        unbind "Ctrl o"
-        bind "Ctrl x" { SwitchToMode "Normal"; }
+        unbind "Ctrl o" // Former bind for session
+        bind "Alt s" { SwitchToMode "Normal"; }
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
         bind "w" {
@@ -160,6 +160,7 @@ keybinds {
             };
             SwitchToMode "Normal"
         }
+        bind "Ctrl q" { Quit; }
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }
@@ -186,10 +187,11 @@ keybinds {
     }
     shared_except "locked" {
         unbind "Alt n"  // Former bind for new pane
+        unbind "Ctrl q" // Former bind to quit
         bind "Ctrl g" { SwitchToMode "Locked"; }
-        bind "Ctrl q" { Quit; }
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Alt c" { NewPane; }
+        bind "Alt t" { NewTab; SwitchToMode "Normal"; }
         bind "Alt i" { MoveTab "Left"; }
         bind "Alt o" { MoveTab "Right"; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
@@ -217,7 +219,7 @@ keybinds {
     }
     shared_except "session" "locked" {
         unbind "Ctrl o" // Former bind for session
-        bind "Ctrl x" { SwitchToMode "Session"; }
+        bind "Alt s" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
