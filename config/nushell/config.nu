@@ -24,3 +24,5 @@ def get-coredump [dump_path: path] {
 def fzf-find-file [search_dir: path]: nothing -> path {
   ^find $"($search_dir)" -type f | fzf
 }
+
+alias nvimdiff = nvim -d

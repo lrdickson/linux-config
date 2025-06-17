@@ -1,40 +1,40 @@
 # load .fishrc if it exists
 if test -e ~/.fishrc
-	. ~/.fishrc
+    . ~/.fishrc
 end
 
 if status is-interactive
-	# turn on vi keybindings
-	fish_vi_key_bindings
+    # turn on vi keybindings
+    fish_vi_key_bindings
 
-	# Start FZF keybindings
-	fzf_key_bindings
+    # Start FZF keybindings
+    fzf_key_bindings
 
-	# Carapace completions
-	# carapace_exclusions=["git" "scp" "ssh"]
-	# $carapace_script="(carapace _carapace)"
-	# for e in $carapace_exclusions
-	# if type -q carapace
-	# 	carapace _carapace | sed 's/.*\<git\>.*//' | sed 's/.*\<scp\>.*//' | source
-	# end
+    # Carapace completions
+    # carapace_exclusions=["git" "scp" "ssh"]
+    # $carapace_script="(carapace _carapace)"
+    # for e in $carapace_exclusions
+    # if type -q carapace
+    # 	carapace _carapace | sed 's/.*\<git\>.*//' | sed 's/.*\<scp\>.*//' | source
+    # end
 end
 
 # set the default editor
 if type -q kak
-	set -x EDITOR kak
+    set -x EDITOR kak
 else if type -q nvim
-	set -x EDITOR nvim
+    set -x EDITOR nvim
 else if type -q vim
-	set -x EDITOR vim
+    set -x EDITOR vim
 else if type -q vi
-	set -x EDITOR vi
+    set -x EDITOR vi
 end
 
 # set the display variable for wsl2
 switch (cat /proc/version)
-case "*WSL2*"
-	set -x HOST_IP (cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
-	set -x DISPLAY "$HOST_IP:0"
+    case "*WSL2*"
+        set -x HOST_IP (cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+        set -x DISPLAY "$HOST_IP:0"
 end
 
 # have tmux display 256color
@@ -49,6 +49,8 @@ fish_add_path ~/.cargo/bin
 fish_add_path ~/node_modules/.bin
 fish_add_path ~/.local/bin
 
-if type -q zoxide 
-	zoxide init fish | source
+if type -q zoxide
+    zoxide init fish | source
 end
+
+alias nvimdiff 'nvim -d'

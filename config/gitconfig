@@ -7,13 +7,13 @@
 	hunk-header-file-style = cyan
 	hunk-header-line-number-style = cyan
 [diff]
-	tool = vimdiff
+	tool = nvimdiff
 [difftool]
 	prompt = false
 	trustExitCode = true
 	# keepBackup = false
 [merge]
-	tool = vimdiff
+	tool = nvimdiff
 [mergetool]
 	prompt = false
 	trustExitCode = true
