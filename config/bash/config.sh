@@ -1,1 +1,1 @@
-alias nvimdiff='nvim -d'
+# alias nvimdiff='nvim -d'

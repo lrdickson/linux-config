@@ -2,6 +2,8 @@
 keybinds {
     // Alt-n used by neovim next reference
     unbind "Alt n"  // Former bind for new pane
+    // Ctrl b used by vim like applictions to scrollback
+    unbind "Ctrl b" // Former bind for tmux mode
     // Ctrl-h used by neovim switch window
     unbind "Ctrl h" // Former bind for move
     // Ctrl-n used by neovim p-menu
@@ -162,29 +164,29 @@ keybinds {
         }
         bind "Ctrl q" { Quit; }
     }
-    tmux {
-        bind "[" { SwitchToMode "Scroll"; }
-        bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
-        bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
-        bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
-        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-        bind "c" { NewTab; SwitchToMode "Normal"; }
-        bind "," { SwitchToMode "RenameTab"; }
-        bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
-        bind "n" { GoToNextTab; SwitchToMode "Normal"; }
-        bind "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
-        bind "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
-        bind "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
-        bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
-        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
-        bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
-        bind "o" { FocusNextPane; }
-        bind "d" { Detach; }
-        bind "Space" { NextSwapLayout; }
-        bind "x" { CloseFocus; SwitchToMode "Normal"; }
-    }
+    // tmux {
+    //     bind "[" { SwitchToMode "Scroll"; }
+    //     bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
+    //     bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
+    //     bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
+    //     bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+    //     bind "c" { NewTab; SwitchToMode "Normal"; }
+    //     bind "," { SwitchToMode "RenameTab"; }
+    //     bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
+    //     bind "n" { GoToNextTab; SwitchToMode "Normal"; }
+    //     bind "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
+    //     bind "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
+    //     bind "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
+    //     bind "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
+    //     bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
+    //     bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+    //     bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
+    //     bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+    //     bind "o" { FocusNextPane; }
+    //     bind "d" { Detach; }
+    //     bind "Space" { NextSwapLayout; }
+    //     bind "x" { CloseFocus; SwitchToMode "Normal"; }
+    // }
     shared_except "locked" {
         unbind "Alt n"  // Former bind for new pane
         unbind "Ctrl q" // Former bind to quit
@@ -229,7 +231,8 @@ keybinds {
         bind "Ctrl e" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
-        bind "Ctrl b" { SwitchToMode "Tmux"; }
+        unbind "Ctrl b" // Former bind for tmux mode
+        // bind "Ctrl b" { SwitchToMode "Tmux"; }
     }
 }
 

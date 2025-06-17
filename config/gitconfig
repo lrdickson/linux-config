@@ -12,6 +12,8 @@
 	prompt = false
 	trustExitCode = true
 	# keepBackup = false
+[difftool "nvimdiff"]
+	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [merge]
 	tool = nvimdiff
 [mergetool]
@@ -19,3 +21,5 @@
 	trustExitCode = true
 	# keepBackup = false
 	# keepTemporaries = false
+[mergetool "nvimdiff"]
+  layout = "LOCAL,BASE,REMOTE / MERGED"
