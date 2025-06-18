@@ -7,16 +7,21 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "c" },
-  callback = function()
-    vim.b.autoformat = false
-  end,
-})
+for _, lang in ipairs({
+  "c",
+  "cpp"
+}) do
+  vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { lang },
+    callback = function()
+      vim.b.autoformat = false
+    end,
+  })
+end
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "cpp" },
+  pattern = { "jinja" },
   callback = function()
-    vim.b.autoformat = false
+    vim.api.nvim_set_option_value('filetype', 'xml', {})
   end,
 })
