@@ -1,0 +1,7 @@
+default_assistant: mistral
+markdown: True
+assistants:
+  llama:
+    model: oai-compat:llama3.1
+  mistral:
+    model: oai-compat:mistral
