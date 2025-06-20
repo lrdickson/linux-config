@@ -1,7 +1,13 @@
 default_assistant: mistral
 markdown: True
 assistants:
+  deepseek:
+    model: oai-compat:deepseek-r1:7b
+  deepseek8b:
+    model: oai-compat:deepseek-r1:8b
   llama:
     model: oai-compat:llama3.1
   mistral:
     model: oai-compat:mistral
+  qwen:
+    model: oai-compat:qwen3
