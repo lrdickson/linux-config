@@ -25,7 +25,7 @@ keybinds {
     }
     resize {
         unbind "Ctrl n" // Former bind for resize
-        bind "Ctrl i" { SwitchToMode "Normal"; }
+        bind "Alt r" { SwitchToMode "Normal"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
@@ -219,7 +219,7 @@ keybinds {
     }
     shared_except "resize" "locked" {
         unbind "Ctrl n" // Former bind for resize
-        bind "Ctrl i" { SwitchToMode "Resize"; }
+        bind "Alt r" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "Ctrl s" { SwitchToMode "Scroll"; }

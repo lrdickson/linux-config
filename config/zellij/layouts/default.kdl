@@ -8,7 +8,7 @@ layout {
             // hide_frame_for_single_pane "true"
 
             format_left  "{mode}#[fg=#89B4FA,bg=#100020,bold] {session}#[bg=#100020] {tabs}"
-            format_right "{command_kubectx}#[fg=#424554,bg=#100020]::{command_kubens}{datetime}"
+            format_right "{datetime}"
             format_space "#[bg=#100020]"
 
             mode_normal          "#[bg=#89B4FA] "
@@ -17,21 +17,13 @@ layout {
 
             tab_normal               "#[fg=#6C7086,bg=#100020] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
             tab_active               "#[fg=#9399B2,bg=#100020,bold,italic] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
-            tab_fullscreen_indicator "(FS) "
+            tab_fullscreen_indicator "🗖 "
             tab_sync_indicator       "  "
             tab_floating_indicator   "󰉈 "
 
-            command_kubectx_command  "kubectx -c"
-            command_kubectx_format   "#[fg=#6C7086,bg=#100020,italic] {stdout}"
-            command_kubectx_interval "2"
-
-            command_kubens_command  "kubens -c"
-            command_kubens_format   "#[fg=#6C7086,bg=#100020]{stdout} "
-            command_kubens_interval "2"
-
             datetime          "#[fg=#9399B2,bg=#100020] {format} "
             datetime_format   "%A, %d %b %Y %H:%M"
-            datetime_timezone "Europe/Berlin"
+            datetime_timezone "America/New_York"
         }
     }
 }
