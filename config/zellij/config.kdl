@@ -131,7 +131,7 @@ keybinds {
     }
     session {
         unbind "Ctrl o" // Former bind for session
-        bind "Alt s" { SwitchToMode "Normal"; }
+        bind "Ctrl w" { SwitchToMode "Normal"; }
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
         bind "w" {
@@ -204,6 +204,11 @@ keybinds {
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
+        bind "Alt /" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
+                floating true
+            }
+        }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -221,7 +226,7 @@ keybinds {
     }
     shared_except "session" "locked" {
         unbind "Ctrl o" // Former bind for session
-        bind "Alt s" { SwitchToMode "Session"; }
+        bind "Ctrl w" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
@@ -253,12 +258,15 @@ plugins {
     configuration location="zellij:configuration"
     plugin-manager location="zellij:plugin-manager"
     about location="zellij:about"
+    zellij_fogot location="file:$HOME/.config/zellij/plugins/zellij_forgot.wasm"
+    zjstatus location="file:$HOME/.config/zellij/plugins/zjstatus.wasm"
 }
 
 // Plugins to load in the background when a new session starts
 load_plugins {
   // "file:/path/to/my-plugin.wasm"
   // "https://example.com/my-plugin.wasm"
+  zjstatus
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
@@ -291,7 +299,7 @@ default_shell "nu"
 //   - true (default)
 //   - false
 //
-// pane_frames false
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -584,6 +592,8 @@ theme "my-theme2"
 // (Requires restart)
 //
 // default_layout "compact"
+// default_layout "$HOME/.config/zellij/layouts/simple.kdl"
+// default_layout "simple"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -650,6 +660,7 @@ theme "my-theme2"
 // (Requires restart)
 //
 // layout_dir "/path/to/my/layout_dir"
+// layout_dir "$HOME/.config/zellij/layouts"
 
 // The folder in which Zellij will look for themes
 // (Requires restart)
