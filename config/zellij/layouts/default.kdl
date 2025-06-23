@@ -5,7 +5,7 @@ layout {
                 hide_frame_for_single_pane "true"
 
                 format_left  "{mode}#[fg=#100020,bg=#0070E0,bold]{session}  #[fg=#0070E0,bg=#100020]{tabs}"
-                format_right "#[fg=#100020,bg=#BBBBBB]{datetime}"
+                format_right "#[fg=#100020,bg=#BBBBBB]{swap_layout}#[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB]{datetime}"
                 format_space "#[bg=#100020]"
 
                 mode_normal  "#[bg=#0070E0] "
