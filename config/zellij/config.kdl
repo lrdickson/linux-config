@@ -210,6 +210,7 @@ keybinds {
                 "new pane"                 "alt + c"
                 "new tab"                  "alt + t"
                 "toggle floating pane"     "alt + f"
+                "toggle layout"            "alt + []"
                 "lock"                     "ctrl + g"
                 "unlock"                   "ctrl + g"
                 "new pane"                 "ctrl + a + n"
