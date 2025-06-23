@@ -252,7 +252,7 @@ keybinds {
                 "detach session"           "ctrl + w + w"
                 "open session manager"     "ctrl + w + w"
                 "quit zellij"              "ctrl + w + ctrl + q"
-                "Neovim escape terminal"   "ctrl + \ + ctrl + n"
+                "Neovim escape terminal"   "ctrl + \\ + ctrl + n"
                 floating true
             }
         }
