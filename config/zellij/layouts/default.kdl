@@ -1,29 +1,26 @@
 layout {
-    pane split_direction="vertical" {
-        pane
-    }
-
     pane size=1 borderless=true {
         plugin location="file:$HOME/.config/zellij/plugins/zjstatus.wasm" {
-            // hide_frame_for_single_pane "true"
-
-            format_left  "{mode}#[fg=#89B4FA,bg=#100020,bold] {session}#[bg=#100020] {tabs}"
-            format_right "{datetime}"
+            format_left  "{mode}#[fg=#100020,bg=blue,bold]{session}  #[fg=blue,bg=#100020]{tabs}"
+            format_right "#[fg=#100020,bg=#b1bbfa]{datetime}"
             format_space "#[bg=#100020]"
 
-            mode_normal          "#[bg=#89B4FA] "
-            mode_tmux            "#[bg=#ffc387] "
-            mode_default_to_mode "tmux"
+            mode_normal  "#[bg=blue] "
 
-            tab_normal               "#[fg=#6C7086,bg=#100020] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
-            tab_active               "#[fg=#9399B2,bg=#100020,bold,italic] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+            tab_normal              "#[fg=#100020,bg=#4C4C59] #[fg=#000000,bg=#4C4C59]{index}  {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}#[fg=#4C4C59,bg=#100020]"
+            tab_active              "#[fg=#100020,bg=#ffffff,bold,italic] {index}  {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}#[fg=#ffffff,bg=#100020]"
             tab_fullscreen_indicator "🗖 "
             tab_sync_indicator       "  "
-            tab_floating_indicator   "󰉈 "
+            tab_floating_indicator   "󰉈  "
 
-            datetime          "#[fg=#9399B2,bg=#100020] {format} "
+
+            datetime          "#[fg=#100020,bg=#b1bbfa,bold] {format} "
             datetime_format   "%A, %d %b %Y %H:%M"
             datetime_timezone "America/New_York"
         }
+    }
+    pane
+    pane size=1 borderless=true {
+        plugin location="status-bar"
     }
 }
