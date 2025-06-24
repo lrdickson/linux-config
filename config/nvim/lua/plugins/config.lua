@@ -37,6 +37,41 @@ return {
     end,
   },
 
+  -- Add to tree sitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "bash",
+        "c",
+        "diff",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "jsonc",
+        "lua",
+        "luadoc",
+        "luap",
+        "markdown",
+        "markdown_inline",
+        "printf",
+        "python",
+        "query",
+        "regex",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "xml",
+        "yaml",
+        -- My additions
+        "c_sharp",
+      },
+    },
+  },
+
   -- Add blink completion to the codecompanion chat buffer
   {
     "saghen/blink.cmp",
@@ -59,5 +94,13 @@ return {
     'echasnovski/mini.align',
     version = '*',
     opts = function() require("mini.align").setup {} end,
+  },
+
+  -- Auto generate ctags
+  {
+    "linrongbin16/gentags.nvim",
+    config = function()
+      require('gentags').setup()
+    end,
   },
 }
