@@ -53,5 +53,11 @@ return {
   {
     "nmac427/guess-indent.nvim",
     opts = function() require("guess-indent").setup {} end,
-  }
+  },
+
+  {
+    'echasnovski/mini.align',
+    version = '*',
+    opts = function() require("mini.align").setup {} end,
+  },
 }

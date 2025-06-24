@@ -25,4 +25,8 @@ def fzf-find-file [search_dir: path]: nothing -> path {
   ^find $"($search_dir)" -type f | fzf
 }
 
+def fzf-find-dir [search_dir: path]: nothing -> path {
+  ^find $"($search_dir)" -type d | fzf
+}
+
 # alias nvimdiff = nvim -d
