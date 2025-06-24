@@ -11,7 +11,8 @@ layout {
 
             tab_normal              "#[fg=#100020,bg=#4C4C59] #[fg=#000000,bg=#4C4C59]{index} | {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}#[fg=#4C4C59,bg=#100020]"
             tab_active              "#[fg=#100020,bg=#BBBBBB,bold] {index} | {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}#[fg=#BBBBBB,bg=#100020]"
-            tab_fullscreen_indicator "🗖 "
+            // tab_fullscreen_indicator "⛶ "
+            tab_fullscreen_indicator "⇱︎ "
             tab_sync_indicator       "  "
             tab_floating_indicator   "󰉈  "
 
