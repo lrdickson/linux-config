@@ -5,6 +5,10 @@ assistants:
     model: oai-compat:deepseek-r1:7b
   deepseek8b:
     model: oai-compat:deepseek-r1:8b
+  gemmae2b:
+    model: oai-compat:gemma3n:e2b
+  gemma:
+    model: oai-compat:gemma3n:e4b
   llama:
     model: oai-compat:llama3.1
   mistral:
