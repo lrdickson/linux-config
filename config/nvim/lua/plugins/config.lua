@@ -22,7 +22,7 @@ return {
         function()
           local ret = vim.bo.fileformat
           if vim.bo.modified then
-            ret = "+ " .. ret
+            ret = "● " .. ret
           end
           return ret
         end,
