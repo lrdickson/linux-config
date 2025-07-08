@@ -20,7 +20,11 @@ return {
       -- })
       opts.sections.lualine_y = {
         function()
-          return vim.bo.fileformat
+          local ret = vim.bo.fileformat
+          if vim.bo.modified then
+            ret = "+ " .. ret
+          end
+          return ret
         end,
       }
       opts.sections.lualine_z = {
