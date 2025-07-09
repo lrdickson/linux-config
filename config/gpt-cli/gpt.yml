@@ -11,6 +11,14 @@ assistants:
     model: oai-compat:gemma3n:e4b
   llama:
     model: oai-compat:llama3.1
+  llama8kc:
+    model: oai-compat:llama3.1-8kc
+  llama16kc:
+    model: oai-compat:llama3.1-16kc
+  llama30kc:
+    model: oai-compat:llama3.1-30kc
+  llama32kc:
+    model: oai-compat:llama3.1-32kc
   mistral:
     model: oai-compat:mistral
   qwen:
