@@ -141,6 +141,7 @@ keybinds clear-defaults=true {
                 floating true
                 LOAD_ZELLIJ_BINDINGS "false"
                 "Neovim escape terminal" "ctrl + \\ + ctrl + n"
+                "Neovim fold menu" "z"
                 "brake pane left" "ctrl + t + ["
                 "brake pane right" "ctrl + t + ]"
                 "brake pane to new tab" "ctrl + t + b"
@@ -169,6 +170,8 @@ keybinds clear-defaults=true {
                 "move pane to left" "ctrl + e + h"
                 "move pane to right" "ctrl + e + l"
                 "move pane to top" "ctrl + e + k"
+                "move tab to left (down index)" "alt + i"
+                "move tab to right (up index)" "alt + o"
                 "new pane" "ctrl + a + n"
                 "new tab" "ctrl + t + n"
                 "open session manager" "ctrl + w + w"
