@@ -137,7 +137,7 @@ keybinds clear-defaults=true {
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt /" {
-            LaunchOrFocusPlugin "file:/home/l3harris/.config/zellij/plugins/zellij_forgot.wasm" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
                 floating true
                 LOAD_ZELLIJ_BINDINGS "false"
                 "Neovim escape terminal" "ctrl + \\ + ctrl + n"
@@ -542,8 +542,8 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
-    zellij_fogot location="file:/home/l3harris/.config/zellij/plugins/zellij_forgot.wasm"
-    zjstatus location="file:/home/l3harris/.config/zellij/plugins/zjstatus.wasm"
+    zellij_forgot location="file:~/.config/zellij/plugins/zellij_forgot.wasm"
+    zjstatus location="file:~/.config/zellij/plugins/zjstatus.wasm"
 }
 
 // Plugins to load in the background when a new session starts
