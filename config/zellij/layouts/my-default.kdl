@@ -8,6 +8,9 @@ layout {
             format_space "#[bg=#100020]"
 
             mode_normal  "#[bg=#0070E0] "
+            mode_session "#[bg=#00A000] "
+            mode_pane "#[bg=#00A000] "
+            mode_rename_pane "#[bg=#A0A000] "
 
             tab_normal              "#[fg=#100020,bg=#4C4C59] #[fg=#000000,bg=#4C4C59]{index} | {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}#[fg=#4C4C59,bg=#100020]"
             tab_active              "#[fg=#100020,bg=#BBBBBB,bold] {index} | {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}#[fg=#BBBBBB,bg=#100020]"
@@ -25,4 +28,10 @@ layout {
     pane size=1 borderless=true {
         plugin location="status-bar"
     }
+    // pane size=1 borderless=true {
+    //     plugin location="zjstatus" {
+    //         format_left  "{mode}"
+    //         mode_normal  "#[fg=#BBBBBB,bg=#100020]Ctrl + #[fg=#100020,bg=#BBBBBB,bold] <g> LOCK #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <a> PANE #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <t> TAB #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <e> MOVE #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <a> SEARCH #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <w> SESSION #[fg=#BBBBBB,bg=#100020] Alt + #[fg=#100020,bg=#BBBBBB,bold] <r> RESIZE #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <c> New Pane #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <t> New Tab #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <f> Floating #[fg=#BBBBBB,bg=#100020]"
+    //     }
+    // }
 }
