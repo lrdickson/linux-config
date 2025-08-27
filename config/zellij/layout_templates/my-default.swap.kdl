@@ -8,9 +8,6 @@ tab_template name="ui" {
             format_space "#[bg=#100020]"
 
             mode_normal  "#[bg=#0070E0] "
-            mode_session "#[bg=#00A000] "
-            mode_pane "#[bg=#00A000] "
-            mode_rename_pane "#[bg=#A0A000] "
 
             tab_normal              "#[fg=#100020,bg=#4C4C59] #[fg=#000000,bg=#4C4C59]{index} | {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}#[fg=#4C4C59,bg=#100020]"
             tab_active              "#[fg=#100020,bg=#BBBBBB,bold] {index} | {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}#[fg=#BBBBBB,bg=#100020]"

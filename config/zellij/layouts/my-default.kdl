@@ -28,10 +28,4 @@ layout {
     pane size=1 borderless=true {
         plugin location="status-bar"
     }
-    // pane size=1 borderless=true {
-    //     plugin location="zjstatus" {
-    //         format_left  "{mode}"
-    //         mode_normal  "#[fg=#BBBBBB,bg=#100020]Ctrl + #[fg=#100020,bg=#BBBBBB,bold] <g> LOCK #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <a> PANE #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <t> TAB #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <e> MOVE #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <a> SEARCH #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <w> SESSION #[fg=#BBBBBB,bg=#100020] Alt + #[fg=#100020,bg=#BBBBBB,bold] <r> RESIZE #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <c> New Pane #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <t> New Tab #[fg=#BBBBBB,bg=#100020]#[fg=#100020,bg=#BBBBBB,bold] <f> Floating #[fg=#BBBBBB,bg=#100020]"
-    //     }
-    // }
 }
