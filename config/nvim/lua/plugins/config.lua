@@ -6,7 +6,7 @@ end
 return {
   -- Disable mason to use system package manager
   { "williamboman/mason-lspconfig.nvim", enabled = enable_mason },
-  { "williamboman/mason.nvim",           enabled = enable_mason },
+  { "williamboman/mason.nvim", enabled = enable_mason },
 
   -- Add fileformat to lualine
   {
@@ -31,11 +31,11 @@ return {
         {
           "progress",
           separator = " ",
-          padding = { left = 1, right = 0 }
+          padding = { left = 1, right = 0 },
         },
         {
           "location",
-          padding = { left = 0, right = 1 }
+          padding = { left = 0, right = 1 },
         },
       }
     end,
@@ -72,6 +72,7 @@ return {
         "yaml",
         -- My additions
         "c_sharp",
+        "fsharp",
       },
     },
   },
@@ -91,20 +92,24 @@ return {
   -- Add indent detection
   {
     "nmac427/guess-indent.nvim",
-    opts = function() require("guess-indent").setup {} end,
+    opts = function()
+      require("guess-indent").setup({})
+    end,
   },
 
   {
-    'echasnovski/mini.align',
-    version = '*',
-    opts = function() require("mini.align").setup {} end,
+    "echasnovski/mini.align",
+    version = "*",
+    opts = function()
+      require("mini.align").setup({})
+    end,
   },
 
   -- Auto generate ctags
   {
     "linrongbin16/gentags.nvim",
     config = function()
-      require('gentags').setup()
+      require("gentags").setup()
     end,
   },
 }

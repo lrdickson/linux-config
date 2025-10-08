@@ -7,6 +7,7 @@ return {
       servers = {
         bashls = {},
         clangd = {},
+        fsautocomplete = {},
         gopls = {},
         julials = {},
         lua_ls = {},
