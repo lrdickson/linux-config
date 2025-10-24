@@ -43,7 +43,7 @@ def get_datetime_display [] {
         | str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
 }
 
-def create_left_prompt [] {
+def create_left_prompt_old [] {
     # Get the directory relative to home
     let dir = match (do -i { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
@@ -69,6 +69,12 @@ def create_left_prompt [] {
 
     # [(get_datetime_display), " ", $path, (fast_git), $last_exit_code] | str join
     [(get_datetime_display), " ", $path, $last_exit_code] | str join
+}
+
+$env.STARSHIP_SHELL = "nu"
+
+def create_left_prompt [] {
+    starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
 }
 
 # Use nushell functions to define your right and left prompt

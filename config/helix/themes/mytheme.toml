@@ -6,16 +6,16 @@ inherits = "snazzy"
 "ui.cursorline.primary" = { bg = "background2p" }
 "ui.cursorline.secondary" = { bg = "background2s" }
 "ui.popup" = { bg = "background2s" }
-"ui.menu" = { bg = "background2s"}
+"ui.menu" = { bg = "background2s" }
 "ui.statusline" = { bg = "background2s" }
 "ui.statusline.inactive" = { bg = "background1" }
 
 [palette]
 
 # Purple mode
-background1  = "#220022"
+background1 = "#100020"
 background2p = "#440066"
-background2s = "#440044"
+background2s = "#200040"
 
 # Green mode
 # background1  = "#003300"
