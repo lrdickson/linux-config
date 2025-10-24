@@ -5,8 +5,8 @@ end
 
 return {
   -- Disable mason to use system package manager
-  { "williamboman/mason-lspconfig.nvim", enabled = enable_mason },
-  { "williamboman/mason.nvim", enabled = enable_mason },
+  { "mason-org/mason-lspconfig.nvim", enabled = enable_mason },
+  { "mason-org/mason.nvim",           enabled = enable_mason },
 
   -- Add fileformat to lualine
   {
@@ -98,7 +98,7 @@ return {
   },
 
   {
-    "echasnovski/mini.align",
+    "nvim-mini/mini.align",
     version = "*",
     opts = function()
       require("mini.align").setup({})

@@ -30,6 +30,19 @@ def fast_git [] {
     }
 }
 
+def get_datetime_display [] {
+
+    ([
+        (ansi reset)
+        (ansi magenta)
+        (date now | format date "%m-%d %H:%M") # try to respect user's locale
+        (ansi reset)
+    ]
+        | str join
+        | str replace --regex --all "([-:])" $"(ansi green)${1}(ansi magenta)"
+        | str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
+}
+
 def create_left_prompt [] {
     # Get the directory relative to home
     let dir = match (do -i { $env.PWD | path relative-to $nu.home-path }) {
@@ -47,13 +60,6 @@ def create_left_prompt [] {
 
     let path = ($path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)")
 
-    let time_segment = ([
-        (ansi reset)
-        (ansi magenta)
-        (date now | format date "%m-%d %H:%M") # try to respect user's locale
-    ] | str join | str replace --regex --all "([-:])" $"(ansi green)${1}(ansi magenta)" |
-        str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
-
     let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
         (char space)
         (ansi rb)
@@ -61,12 +67,18 @@ def create_left_prompt [] {
     ] | str join)
     } else { "" }
 
-    [$time_segment, " ", $path, (fast_git), $last_exit_code] | str join
+    # [(get_datetime_display), " ", $path, (fast_git), $last_exit_code] | str join
+    [(get_datetime_display), " ", $path, $last_exit_code] | str join
 }
 
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
 $env.PROMPT_COMMAND_RIGHT = {||}
+
+# $env.config.hooks = {
+#     pre_prompt: [{ get_datetime_display | print }]
+#     pre_execution: [{ get_datetime_display | print }]
+# }
 
 use std "path add"
 path add /nix/var/nix/profiles/default/bin
