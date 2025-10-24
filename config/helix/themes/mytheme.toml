@@ -14,8 +14,8 @@ inherits = "snazzy"
 
 # Purple mode
 background1 = "#100020"
-background2p = "#440066"
-background2s = "#200040"
+background2p = "#201060"
+background2s = "#300060"
 
 # Green mode
 # background1  = "#003300"
