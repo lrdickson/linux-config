@@ -1,83 +1,5 @@
 
-# ===================== lsp-ai ======================#
-[language-server.lsp-ai]
-command = "lsp-ai"
-
-[language-server.lsp-ai.config.memory]
-file_store = {}
-
-[language-server.lsp-ai.config.models.model1]
-type = "ollama"
-model = "qwen2.5-coder"
-
-[[language-server.lsp-ai.config.chat]]
-trigger = "!C"
-action_display_name = "Chat"
-model = "model1"
-
-[language-server.lsp-ai.config.chat.parameters]
-max_context = 8192
-# max_tokens = 1024
-system = "You are a code assistant chatbot. The user will ask you for assistance coding and you will do you best to answer succinctly and accurately"
-
-[language-server.lsp-ai.config.completion]
-model = "model1"
-
-[language-server.lsp-ai.config.completion.parameters]
-# max_tokens = 32
-max_context = 8192
-
-## Configure the messages per your needs
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "system"
-content = "Instructions:\n- You are an AI programming assistant.\n- Given a piece of code with the cursor location marked by \"<CURSOR>\", replace \"<CURSOR>\" with the correct code or comment.\n- First, think step-by-step.\n- Describe your plan for what to build in pseudocode, written out in great detail.\n- Then output the code replacing the \"<CURSOR>\"\n- Ensure that your completion fits within the language context of the provided code snippet (e.g., Python, JavaScript, Rust).\n\nRules:\n- Only respond with code or comments.\n- Only replace \"<CURSOR>\"; do not include any previously written code.\n- Never include \"<CURSOR>\" in your response\n- If the cursor is within a comment, complete the comment meaningfully.\n- Handle ambiguous cases by providing the most contextually appropriate completion.\n- Be consistent with your responses."
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "user"
-content = "def greet(name):\n    print(f\"Hello, {<CURSOR>}\")"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "assistant"
-content = "name"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "user"
-content = "function sum(a, b) {\n    return a + <CURSOR>;\n}"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "assistant"
-content = "b"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "user"
-content = "fn multiply(a: i32, b: i32) -> i32 {\n    a * <CURSOR>\n}"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "assistant"
-content = "b"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "user"
-content = "# <CURSOR>\ndef add(a, b):\n    return a + b"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "assistant"
-content = "Adds two numbers"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "user"
-content = "# This function checks if a number is even\n<CURSOR>"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "assistant"
-content = "def is_even(n):\n    return n % 2 == 0"
-
-[[language-server.lsp-ai.config.completion.parameters.messages]]
-role = "user"
-content = "{CODE}"
-
-
-# ============================ Other language servers =============================#
+# ============================ Language Servers =============================#
 
 # ctags language server
 [language-server.ctags-lsp]
@@ -91,15 +13,9 @@ command = "ltex-ls"
 [language-server.markdown-oxide]
 command = "markdown-oxide"
 
-# AI coding assistant
-[language-server.tabby]
-command = "npx"
-args = ["tabby-agent", "--lsp", "--stdio"]
-
 # Adding typos-lsp language server for spell checking
 [language-server.typos-lsp]
 command = "typos-lsp"
-
 
 # ============================ Languages =============================#
 [[language]]
@@ -108,13 +24,11 @@ language-servers = ["bash-language-server", "typos-lsp"]
 
 [[language]]
 name = "c"
-# language-servers = [ "clangd", "typos-lsp", "lsp-ai" ]
-language-servers = ["clangd", "typos-lsp", "tabby"]
+language-servers = ["clangd", "typos-lsp"]
 
 [[language]]
 name = "cpp"
-# language-servers = [ "clangd", "typos-lsp", "lsp-ai" ]
-language-servers = ["clangd", "typos-lsp", "tabby"]
+language-servers = ["clangd", "typos-lsp"]
 
 [[language]]
 name = "c-sharp"
@@ -122,7 +36,7 @@ language-servers = ["OmniSharp", "typos-lsp", "ctags-lsp"]
 
 [[language]]
 name = "go"
-language-servers = ["gopls", "golangci-lint-langserver", "typos-lsp", "tabby"]
+language-servers = ["gopls", "golangci-lint-langserver", "typos-lsp"]
 
 [[language]]
 name = "jinja"
@@ -143,12 +57,11 @@ language-servers = [
   "jedi-language-server",
   "pylsp",
   "typos-lsp",
-  "tabby",
 ]
 
 [[language]]
 name = "rust"
-language-servers = ["rust-analyzer", "typos-lsp", "lsp-ai"]
+language-servers = ["rust-analyzer", "typos-lsp"]
 
 [[language]]
 name = "toml"
