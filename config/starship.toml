@@ -1,4 +1,9 @@
 
-[time]
+[container]
+style = 'bold red'
 
+[hostname]
+style = 'bold green'
+
+[time]
 disabled = false
