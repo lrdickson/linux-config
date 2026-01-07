@@ -92,5 +92,5 @@ path add ~/node_modules/.bin
 path add ~/.local/bin
 path add ~/.cargo/bin
 
-$env.EDITOR = "nvim"
+$env.EDITOR = "hx"
 
