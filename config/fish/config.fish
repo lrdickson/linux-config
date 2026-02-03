@@ -31,11 +31,11 @@ else if type -q vi
 end
 
 # set the display variable for wsl2
-switch (cat /proc/version)
-    case "*WSL2*"
-        set -x HOST_IP (cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
-        set -x DISPLAY "$HOST_IP:0"
-end
+# switch (cat /proc/version)
+#     case "*WSL2*"
+#         set -x HOST_IP (cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+#         set -x DISPLAY "$HOST_IP:0"
+# end
 
 # have tmux display 256color
 alias tmux="tmux -2"
