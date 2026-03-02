@@ -24,15 +24,18 @@ language-servers = ["bash-language-server", "typos-lsp"]
 
 [[language]]
 name = "c"
+# language-servers = ["clangd", "typos-lsp", "ctags-lsp"]
 language-servers = ["clangd", "typos-lsp"]
 
 [[language]]
 name = "cpp"
+# language-servers = ["clangd", "typos-lsp", "ctags-lsp"]
 language-servers = ["clangd", "typos-lsp"]
 
 [[language]]
 name = "c-sharp"
-language-servers = ["OmniSharp", "typos-lsp", "ctags-lsp"]
+# language-servers = ["OmniSharp", "typos-lsp", "ctags-lsp"]
+language-servers = ["typos-lsp", "ctags-lsp"]
 
 [[language]]
 name = "go"

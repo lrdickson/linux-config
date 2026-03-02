@@ -2,9 +2,9 @@
 # nix-your-shell nu | save nix-your-shell.nu
 
 def _nix_your_shell (command: string, args: list<string>) {
-  if not (which /nix/store/4pwlhxfpla057dayp32h3dxdv51lxd76-nix-your-shell-1.4.6/bin/nix-your-shell | is-empty) {
+  if not (which /run/current-system/sw/bin/nix-your-shell | is-empty) {
     let args = ["--"] ++ $args
-    run-external /nix/store/4pwlhxfpla057dayp32h3dxdv51lxd76-nix-your-shell-1.4.6/bin/nix-your-shell nu $command ...$args
+    run-external /run/current-system/sw/bin/nix-your-shell nu $command ...$args
   } else {
     run-external $command ...$args
   }
