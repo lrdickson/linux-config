@@ -56,6 +56,7 @@ language-servers = ["nil", "nixd", "typos-lsp"]
 [[language]]
 name = "python"
 language-servers = [
+  "ty",
   "ruff",
   "jedi-language-server",
   "pylsp",

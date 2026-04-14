@@ -54,6 +54,8 @@ let external_completer = {|spans|
         nu => $fish_completer
         # fish completes commits and branch names in a nicer way
         git => $fish_completer
+        # Zellij has completion integrations setup for fish
+        zellij => $fish_completer
         # carapace doesn't have completions for asdf
         asdf => $fish_completer
         _ => $carapace_completer
