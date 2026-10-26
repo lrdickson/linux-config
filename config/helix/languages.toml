@@ -5,6 +5,11 @@
 [language-server.ctags-lsp]
 command = "ctags-lsp"
 
+[language-server.expert]
+command = "expert"
+args = ["--stdio"]
+environment = { HEX_CACERTS_PATH = "/etc/ssl/certs/ca-certificates.crt" }
+
 # ltex language server also works with markdown and includes spell checking
 [language-server.ltex-ls]
 command = "ltex-ls"
@@ -36,6 +41,11 @@ language-servers = ["clangd", "typos-lsp"]
 name = "c-sharp"
 # language-servers = ["OmniSharp", "typos-lsp", "ctags-lsp"]
 language-servers = ["typos-lsp", "ctags-lsp"]
+
+[[language]]
+name = "elixir"
+language-servers = ["expert"]
+roots = ["mix.exs", "mix.lock", ".git"]
 
 [[language]]
 name = "go"
